@@ -51,6 +51,7 @@ class App extends Component {
 
 }
 
+console.log("wassup");
 // function App() {
 
 //   //declare backendData as a state variable
