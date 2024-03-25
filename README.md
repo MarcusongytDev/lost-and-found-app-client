@@ -68,3 +68,8 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+•	Install axios to help make API requests easier npm install axios
+•	Install react-router-dom allows you to implement dynamic routing in a web app npm install react-router-dom
+•	Install yup to use for form validation npm install yup
