@@ -73,3 +73,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 •	Install axios to help make API requests easier npm install axios
 •	Install react-router-dom allows you to implement dynamic routing in a web app npm install react-router-dom
 •	Install yup to use for form validation npm install yup
+•	Install react-bootstrap to use for easier HTML component creation npm install react-bootstrap bootstrap

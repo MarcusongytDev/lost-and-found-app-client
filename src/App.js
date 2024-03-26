@@ -4,6 +4,7 @@ import {BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom'; /
 import Home from "./pages/home";
 import lostItemCatalog from "./pages/lostItemCatalog";
 import LostItemNotice from './pages/lostItemNotice';
+import Template from './pages/template';
 
 // class App extends Component {
 
@@ -60,10 +61,7 @@ function Apps(){
   return (
     <div className="App">
       <Router>
-        <div className="navbar">
-          <Link to="/lostItemNotice">Lost Item Notice</Link> {/* Creates a clickable link to a relative url path */}
-          <Link to="/home">Home Page</Link> {/* Creates a clickable link to a relative url path */}
-        </div>
+        <Template/>
         <Routes>
           <Route path="/">
             <Route path = "home" exact element={<Home/>} />

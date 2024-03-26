@@ -4,6 +4,7 @@ import {useEffect, useState} from 'react'; // Used for api calls to server
 import {useNavigate} from 'react-router-dom';
 import {Formik, Form, Field, ErrorMessage} from 'formik'; // importing components : Formik, Form, Field etc
 import * as Yup from 'yup';
+import './lostItemNotice.css';
 
 
 function LostItemNotice() {
