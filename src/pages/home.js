@@ -8,7 +8,7 @@ function Home(){
     let navigate = useNavigate(); //Allows you to change to another route from your current route using push
 
     useEffect(()=>{ // Instantiate an anonymous function
-        axios.get("http://localhost:5000/posts").then((response) => {
+        axios.get("http://localhost:5000/lostItemPosts").then((response) => {
             setListOfPosts(response.data); // create a state containing response from the API request, can be used to display the data
         });
     }, []);
