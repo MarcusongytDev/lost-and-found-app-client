@@ -10,9 +10,12 @@
     background-color: #213555;
     color: white;
 }
-.bottom{
+.footer{
     position: absolute;
     bottom: 0px;
     right: 0px;
     width: 100%;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: bold;
 }

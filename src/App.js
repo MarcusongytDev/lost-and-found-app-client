@@ -4,7 +4,10 @@ import {BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom'; /
 import Home from "./pages/home";
 import lostItemCatalog from "./pages/lostItemCatalog";
 import LostItemNotice from './pages/lostItemNotice';
+import FoundItemNotice from './pages/foundItemNotice';
 import Template from './pages/template';
+import ContactFinder from './pages/contactFinder';  
+import Settings from './pages/settings';
 
 // class App extends Component {
 
@@ -66,7 +69,10 @@ function Apps(){
           <Route path="/">
             <Route path = "home" exact element={<Home/>} />
             <Route path = "lostItemNotice" exact element={<LostItemNotice/>} />
-            <Route path = "lostItemCatalog" exact element={<lostItemCatalog/>} /> {/* id entered in path inputed into Post file by useParams() */}
+            <Route path = "lostItemCatalog" exact element={<lostItemCatalog/>} />
+            <Route path = "settings" exact element={<Settings/>} />
+            <Route path = "foundItemNotice" exact element={<FoundItemNotice/>} />
+            <Route path = "contactFinder" exact element={<ContactFinder/>} /> 
           </Route>
         </Routes>
       </Router>

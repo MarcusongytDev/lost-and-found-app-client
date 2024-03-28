@@ -22,6 +22,9 @@ function Template(){
                     <NavDropdown.Item href="/home">Home</NavDropdown.Item>
                     <NavDropdown.Item href="/lostItemNotice">Lost Item Notice</NavDropdown.Item>
                     <NavDropdown.Item href="/lostItemCatalog">Lost Item Catalog</NavDropdown.Item>
+                    <NavDropdown.Item href="/foundItemNotice">Found Item Notice</NavDropdown.Item>
+                    <NavDropdown.Item href="/settings">Settings</NavDropdown.Item>
+                    <NavDropdown.Item href="/contactFinder">Contact Finder</NavDropdown.Item>
                     <NavDropdown.Divider />
                 </NavDropdown>
                 </Navbar.Collapse>
@@ -30,7 +33,7 @@ function Template(){
 
             {/* Footer */}
             <Container fluid>
-                <Card body className="justify-content-center navbar-custom bottom">Hi</Card>
+                <Card body className="justify-content-center navbar-custom footer text-center">Version 1.0 Group Varghes</Card>
             </Container>
         </>
     );
