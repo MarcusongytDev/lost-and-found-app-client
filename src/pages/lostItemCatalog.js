@@ -2,6 +2,10 @@ import React from "react";
 import {useParams} from "react-router-dom";
 import axios from 'axios';
 import {useEffect, useState} from 'react'; // Used for api calls to server
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './lostItemCatalog.css';
+
+
 
 function LostItemCatalog() {
     let {id} = useParams()
