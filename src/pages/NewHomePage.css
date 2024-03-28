@@ -1,0 +1,170 @@
+.new-home-page-child,
+.new-home-page-item {
+  position: absolute;
+  top: 26px;
+  left: 1438px;
+  max-height: 100%;
+  width: 43px;
+}
+.new-home-page-item {
+  top: 38px;
+}
+.emile-seguin-r9ouekotggu-unspl-icon {
+  position: absolute;
+  bottom: 75px;
+  left: 0;
+  width: 1512px;
+  height: 907px;
+  object-fit: cover;
+}
+.never-lose-again,
+.we-are-committed {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.never-lose-again {
+  width: 676px;
+  font-size: 80px;
+  letter-spacing: 0.01em;
+}
+.we-are-committed {
+  width: 632px;
+  font-size: 24px;
+  text-decoration: underline;
+  line-height: 32px;
+}
+.looking-for-an {
+  position: relative;
+  line-height: 18px;
+}
+.primary-button {
+  border-radius: 40px;
+  background-color: #06040a;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 24px 56px;
+  text-align: left;
+  color: #fff;
+}
+.found-an-item {
+  width: 194px;
+  position: relative;
+  line-height: 18px;
+  align-items: center;
+  height: 21px;
+  flex-shrink: 0;
+}
+.content,
+.found-an-item,
+.primary-button1 {
+  display: flex;
+  justify-content: center;
+}
+.primary-button1 {
+  width: 307px;
+  border-radius: 40px;
+  background-color: #06040a;
+  overflow: hidden;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 24px 56px;
+  box-sizing: border-box;
+  color: #fff;
+}
+.content {
+  align-self: stretch;
+  height: 546px;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+}
+.frame,
+.frame-icon {
+  position: absolute;
+  top: 0;
+  overflow: hidden;
+}
+.frame {
+  left: 289px;
+  width: 934px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  font-size: 22px;
+  color: #06040a;
+  font-family: Lato;
+}
+.frame-icon {
+  left: 0;
+  width: 1512px;
+  height: 982px;
+}
+.version-10 {
+  margin: 0;
+  white-space: pre-wrap;
+}
+.version-10-group-container {
+  align-self: stretch;
+  position: relative;
+  font-weight: 500;
+  text-shadow: 1px 0 0#000, 0 1px 0#000, -1px 0 0#000, 0-1px 0#000;
+}
+.frame1 {
+  position: absolute;
+  top: 0;
+  left: 638px;
+  width: 236px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
+.line-icon,
+.new-home-page-child1,
+.new-home-page-inner {
+  position: absolute;
+  top: 12px;
+  left: 1406px;
+  max-height: 100%;
+  width: 43px;
+}
+.line-icon,
+.new-home-page-child1 {
+  top: 24px;
+}
+.new-home-page-child1 {
+  top: 0;
+}
+.rectangle-div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #213555;
+  width: 1512px;
+  height: 75px;
+}
+.new-home-page-child3 {
+  position: absolute;
+  top: 50px;
+  left: 1438px;
+  max-height: 100%;
+  width: 43px;
+}
+.new-home-page {
+  width: 100%;
+  position: relative;
+  background-color: #fff;
+  height: 982px;
+  overflow: hidden;
+  text-align: center;
+  font-size: 12px;
+  color: #fff;
+  font-family: Inter;
+}
