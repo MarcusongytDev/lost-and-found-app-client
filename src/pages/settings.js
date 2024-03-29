@@ -21,7 +21,7 @@ function Settings(){
                 <Row>
                     <Col className="text-settings" style={{position: "relative", left: "20px"}}>Light Mode</Col>
                     <Col><div className="btn-settings"><Toggle/></div></Col>
-                    <Col className="text-settings" style={{position: "relative", right: "20px"}}>Dark Mode</Col>
+                    <Col className="text-settings" style={{position: "relative", left: "20px"}}>Dark Mode</Col>
                 </Row>
             </Container>
             <Accordion className="col-sm-4 mx-auto">
