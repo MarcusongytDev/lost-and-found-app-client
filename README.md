@@ -75,3 +75,5 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 •	Install formik to use for form creation npm install formik
 •	Install yup to use for form validation npm install yup
 •	Install react-bootstrap to use for easier HTML component creation npm install react-bootstrap bootstrap
+•	Install react-responsive, npm install react-responsive
+•	Install react-toggle, npm install react-toggle

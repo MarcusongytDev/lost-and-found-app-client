@@ -7,12 +7,18 @@ import Accordion from 'react-bootstrap/Accordion';
 import Container from 'react-bootstrap/Container';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './settings.css';
+import Toggle from '../components/modeToggleBtn';
 
 function Settings(){
     return(
-        <>
-            <div className="text-settings"><h1>Settings</h1></div>
-            <Accordion className="accordion-settings col-sm-4 mx-auto">
+        <>  
+            <Container className="text-settings col-sm-10 mx-auto">
+                <h1>Settings</h1>
+            </Container>
+            <Container className="justify-content-center col-sm-2 mx-auto">
+                <div className="btn-settings"><Toggle/></div>
+            </Container>
+            <Accordion className="col-sm-4 mx-auto">
                 <Accordion.Item eventKey="0" className="accordion-item-settings">
                     <Accordion.Header>What do i do if i lost an item?</Accordion.Header>
                     <Accordion.Body>

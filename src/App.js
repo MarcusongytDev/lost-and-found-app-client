@@ -10,6 +10,7 @@ import ContactFinder from './pages/contactFinder';
 import Settings from './pages/settings';
 
 
+
 function Apps(){
   return (
     <div className="App">
