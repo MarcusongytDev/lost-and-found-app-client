@@ -12,3 +12,15 @@
     font-style: italic;
     font-weight: bold;
 }
+body.dark-mode-theme{
+    background-color: black;
+    color: white;
+  }
+body.light-mode-theme{
+background-color: rgb(245, 245, 235);
+color: black;
+}
+body{
+background-color: rgb(245, 245, 235);
+color: black;
+}

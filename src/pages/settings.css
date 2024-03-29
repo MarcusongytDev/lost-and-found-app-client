@@ -1,3 +1,11 @@
+body.dark-mode-theme{
+    background-color: black;
+    color: white;
+}
+body.light-mode-theme{
+    background-color: rgb(245, 245, 235);
+    color: black;
+}
 .accordion-settings{
     width: 40%;
 }
