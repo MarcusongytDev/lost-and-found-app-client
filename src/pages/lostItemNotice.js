@@ -1,52 +1,68 @@
-import React from "react";
+import React from 'react';
 import axios from 'axios';
-import {useEffect, useState} from 'react'; // Used for api calls to server
-import {useNavigate} from 'react-router-dom';
-import {Formik, Form, Field, ErrorMessage} from 'formik'; // importing components : Formik, Form, Field etc
+import { useNavigate } from 'react-router-dom';
+import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './lostItemNotice.css';
-
-
+import 'bootstrap/dist/css/bootstrap.min.css'; // Ensure Bootstrap CSS is imported
+import './lostItemNotice.css'; // Custom styles for the form
 
 function LostItemNotice() {
-    const navigate = useNavigate();
-    const initialValues = {
-        title: "",
-        postText: "",
-        username: ""
-    };
+  const navigate = useNavigate();
 
-    const onSubmit = (data) => { // data
-        axios.post("http://localhost:5000/posts", data).then((response) => {
-            navigate("/home") // goes back to homepage once click on button
-        });
-    };
+  const initialValues = {
+    name: '',
+    email: '',
+    phoneNumber: '',
+    location: '',
+    itemFilter: '',
+    description: ''
+  };
 
-    const validationSchema = Yup.object().shape({
-        title: Yup.string().required(),
-        postText: Yup.string().required(),
-        username: Yup.string().min(3).max(15).required()
-    });
+  const validationSchema = Yup.object({
+    name: Yup.string().required('Required'),
+    email: Yup.string().email('Invalid email address').required('Required'),
+    phoneNumber: Yup.string().required('Required'),
+    location: Yup.string().required('Required'),
+    itemFilter: Yup.string().required('Required'),
+    description: Yup.string().required('Required')
+  });
 
-    return (
-    <div className="createPostPage">
-        <Formik initialValues={initialValues} onSubmit={onSubmit} validationSchema={validationSchema}>
-            <Form className="formContainer">
-                <label>Title:</label>
-                <ErrorMessage name="title" component="span"/>
-                <Field id="inputCreatePost" name="title" placeholder="Title"></Field>
-                <label>Post:</label>
-                <ErrorMessage name="postText" component="span"/>
-                <Field id="inputCreatePost" name="postText" placeholder="Test"></Field>
-                <label>UserName:</label>
-                <ErrorMessage name="username" component="span"/>
-                <Field id="inputCreatePost" name="username" placeholder="JohnLim23"></Field>
-                <button type="submit">Create Post</button>
-            </Form>
-        </Formik>
+  const onSubmit = data => {
+    axios.post('http://localhost:5000/lostitems', data)
+      .then(() => navigate('/home'))
+      .catch(error => console.error('There was an error submitting the form:', error));
+  };
+
+  return (
+    <div className="container my-5 lostItemNotice">
+      <h2 className="text-center mb-4">Report a Lost Item</h2>
+      <Formik initialValues={initialValues} onSubmit={onSubmit} validationSchema={validationSchema}>
+        <Form>
+          <div className="form-row">
+            <FormGroup label="Name" name="name" type="text" placeholder="Name" />
+            <FormGroup label="Location of Lost Item" name="location" type="text" placeholder="Location of Lost Item" />
+          </div>
+          <div className="form-row">
+            <FormGroup label="Email" name="email" type="email" placeholder="Email" />
+            <FormGroup label="Item Filter (Keyword)" name="itemFilter" type="text" placeholder="Item Filter (Keyword)" />
+          </div>
+          <div className="form-row">
+            <FormGroup label="Phone Number" name="phoneNumber" type="text" placeholder="Phone Number" />
+            <FormGroup label="Description" name="description" as="textarea" placeholder="Description" />
+          </div>
+          <button type="submit" className="btn btn-primary mt-3">Submit</button>
+        </Form>
+      </Formik>
     </div>
-    );
+  );
 }
+
+const FormGroup = ({ label, name, type, placeholder, as }) => (
+  <div className="form-group col-md-6">
+    <label htmlFor={name}>{label}</label>
+    <Field name={name} type={type} as={as} className="form-control" placeholder={placeholder} />
+    <ErrorMessage name={name} component="div" className="error-message" />
+  </div>
+);
 
 export default LostItemNotice;
