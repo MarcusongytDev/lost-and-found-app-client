@@ -5,6 +5,8 @@ import {useNavigate} from 'react-router-dom';
 import {Formik, Form, Field, ErrorMessage} from 'formik';
 import Accordion from 'react-bootstrap/Accordion';
 import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './settings.css';
 import Toggle from '../components/modeToggleBtn';
@@ -12,11 +14,15 @@ import Toggle from '../components/modeToggleBtn';
 function Settings(){
     return(
         <>  
-            <Container className="text-settings col-sm-10 mx-auto">
+            <Container className="header-text-settings col-sm-10 mx-auto">
                 <h1>Settings</h1>
             </Container>
-            <Container className="justify-content-center col-sm-2 mx-auto">
-                <div className="btn-settings"><Toggle/></div>
+            <Container className="justify-content-center col-sm-4 mx-auto">
+                <Row>
+                    <Col className="text-settings" style={{position: "relative", left: "20px"}}>Light Mode</Col>
+                    <Col><div className="btn-settings"><Toggle/></div></Col>
+                    <Col className="text-settings" style={{position: "relative", right: "20px"}}>Dark Mode</Col>
+                </Row>
             </Container>
             <Accordion className="col-sm-4 mx-auto">
                 <Accordion.Item eventKey="0" className="accordion-item-settings">

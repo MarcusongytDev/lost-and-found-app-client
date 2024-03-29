@@ -5,7 +5,7 @@
     border-width: 2px;
     border-style: solid;
 }
-.text-settings{
+.header-text-settings{
     text-align: center;
     padding-bottom: 10px;
     text-decoration: underline;
@@ -13,6 +13,12 @@
 .btn-settings{
     text-align: center;
     position: relative;
-    left: 32px;
+    left: 1px;
+    bottom: 5px;
     padding-bottom: 10px;
+}
+.text-settings{
+    font-weight: bold;
+    text-align: center;
+    align-content: center;
 }
