@@ -1,69 +1,64 @@
-import "bootstrap/dist/css/bootstrap.min.css";
-import { Form } from "react-bootstrap";
-import styles from "./contactFinder.css";
+import React from 'react';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+import { Formik, Form, Field, ErrorMessage } from 'formik';
+import * as Yup from 'yup';
+import 'bootstrap/dist/css/bootstrap.min.css'; // Ensure Bootstrap CSS is imported
+import './contactFinder.css'; // Custom styles for the form
 
-const ContactFinder = () => {
+function ContactFinder() {
+  const navigate = useNavigate();
+
+  const initialValues = {
+    name: '',
+    email: '',
+    phoneNumber: '',
+    message: '',
+  };
+
+  const validationSchema = Yup.object({
+    name: Yup.string().required('Required'),
+    email: Yup.string().email('Invalid email address').required('Required'),
+    phoneNumber: Yup.string().required('Required'),
+    message: Yup.string().required('Required'),
+  });
+
+  const onSubmit = data => {
+    axios.post('http://localhost:5000/lostitems', data)
+      .then(() => navigate('/home'))
+      .catch(error => console.error('There was an error submitting the form:', error));
+  };
+
   return (
-    <div className={styles.contactFinder}>
-      <img
-        className={styles.emileSeguinR9ouekotgguUnsplIcon}
-        alt=""
-        src="/emileseguinr9ouekotgguunsplash-1@2x.png"
-      />
-      <img
-        className={styles.contactFinderChild}
-        alt=""
-        src="/rectangle-61.svg"
-      />
-      <div className={styles.version10GroupContainer}>
-        <p className={styles.version10}>Version 1.0 Group Varghes</p>
-      </div>
-      <img className={styles.contactFinderItem} alt="" src="/line-9.svg" />
-      <img className={styles.contactFinderInner} alt="" src="/line-9.svg" />
-      <img className={styles.lineIcon} alt="" src="/line-9.svg" />
-      <img className={styles.contactFinderChild1} alt="" src="/line-9.svg" />
-      <div className={styles.rectangleDiv} />
-      <img className={styles.contactFinderChild2} alt="" src="/line-9.svg" />
-      <div className={styles.rectangleDiv} />
-      <div className={styles.rectangleDiv} />
-      <img className={styles.sidebarIcon} alt="" src="/sidebar.svg" />
-      <Form className={styles.wrapper}>
-        <Form.Control type="text" name="message" />
-      </Form>
-      <div className={styles.sendMessageWrapper}>
-        <b className={styles.sendMessage}>Send Message</b>
-      </div>
-      <Form className={styles.frameFirstname}>
-        <Form.Control type="text" name="FirstName" placeholder="First" />
-      </Form>
-      <Form className={styles.frame2ndname}>
-        <Form.Control type="text" name="Lastname" placeholder="Last" />
-      </Form>
-      <Form className={styles.emailtextbox}>
-        <Form.Control type="text" name="email" />
-      </Form>
-      <Form className={styles.phonecontact}>
-        <Form.Control type="text" name="phone/contact" />
-      </Form>
-      <b className={styles.contactFinder1}>Contact Finder</b>
-      <div className={styles.name}>
-        <span>{`Name `}</span>
-        <span className={styles.span}>*</span>
-      </div>
-      <div className={styles.phonecontact1}>
-        <span>{`Phone/Contact `}</span>
-        <span className={styles.span}>*</span>
-      </div>
-      <div className={styles.message}>
-        <span>{`Message `}</span>
-        <span className={styles.span}>*</span>
-      </div>
-      <div className={styles.email}>
-        <span>{`Email `}</span>
-        <span className={styles.span}>*</span>
-      </div>
+    <div className="container1 my-5 contactFinder">
+      <h2 className="text-center mb-4">Contact Finder</h2>
+      <Formik initialValues={initialValues} onSubmit={onSubmit} validationSchema={validationSchema}>
+        <Form>
+          <div className="form-row">
+            <FormGroup label="Name" name="name" type="text" placeholder="Name" />
+           </div>
+          <div className="form-row1">
+            <FormGroup label="Email" name="email" type="email" placeholder="Email" />
+          </div>
+          <div className="form-row2">
+            <FormGroup label="Phone Number" name="phoneNumber" type="text" placeholder="Phone Number" />
+          </div>
+          <div className="message-row">
+          <FormGroup label="Message" name="message" as="textarea" placeholder="Message for the person who found your item" />
+          </div>
+          <button type="sendmessage" className="sendmessagebtn">Send Message</button>
+        </Form>
+      </Formik>
     </div>
   );
-};
+}
 
-export default ContactFinder;
+const FormGroup = ({ label, name, type, placeholder, as }) => (
+  <div className="form-group col-md-6">
+    <label htmlFor={name}>{label}</label>
+    <Field name={name} type={type} as={as} className="form-control" placeholder={placeholder} />
+    <ErrorMessage name={name} component="div" className="error-message" />
+  </div>
+);
+
+export default ContactFinder
