@@ -32,7 +32,7 @@ function Template(){
             </Navbar>
 
             {/* Footer */}
-            <Container fluid>
+            <Container>
                 <footer><Card body className="justify-content-center navbar-custom template-footer text-center">Version 1.0 Group Varghes</Card></footer>
             </Container>
         </>

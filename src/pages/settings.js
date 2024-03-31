@@ -10,21 +10,53 @@ import Col from 'react-bootstrap/Col';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './settings.css';
 import Toggle from '../components/modeToggleBtn';
+import bugimage from '../assets/bug-icon.jpg';
+import qnimage from '../assets/questionmark-icon.png';
+import faqimage from '../assets/faq-icon.png';
+import globeimage from '../assets/globe-icon.png';
+import commentimage from '../assets/comment-icon.png';
 
 function Settings(){
     return(
-        <>  
+        <Container className ="settings-overall-settings">  
             <Container className="header-text-settings col-sm-10 mx-auto">
                 <h1>Settings</h1>
             </Container>
-            <Container fluid className="justify-content-center col-sm-3 mx-auto">
+            <Container fluid className="justify-content-center col-sm-6 mx-auto">
                 <Row>
-                    <Col className="text-settings" style={{position: "relative", left: "20px"}}>Light Mode</Col>
+                    <Col className="text-settings">Light Mode</Col>
                     <Col><div className="btn-settings"><Toggle/></div></Col>
-                    <Col className="text-settings" style={{position: "relative", right: "20px"}}>Dark Mode</Col>
+                    <Col className="text-settings">Dark Mode</Col>
                 </Row>
             </Container>
-            <Accordion className="col-sm-4 mx-auto">
+            <Container fluid className="justify-content-center col-sm-7 mx-auto">
+                <Row style={{position: "relative", right: "40px"}}>
+                    <Col style={{position: "relative", left: "80px"}}><img className="settings-img" src={bugimage} alt="Bug Icon"/></Col>
+                    <Col className="settings-text-settings" style={{float: "right"}}><h4>Report A Bug</h4></Col>
+                </Row>
+                <hr className="solid"/>
+                <Row style={{position: "relative", right: "40px"}}>
+                    <Col style={{position: "relative", left: "80px"}}><img className="settings-img" src={qnimage} alt="Question Mark Icon"/></Col>
+                    <Col className="settings-text-settings" style={{float: "right"}}><h4>Help</h4></Col>
+                </Row>
+                <hr className="solid"/>
+                <Row style={{position: "relative", right: "40px"}}>
+                    <Col style={{position: "relative", left: "80px"}}><img className="settings-img" src={globeimage} alt="Globe Icon"/></Col>
+                    <Col className="settings-text-settings" style={{float: "right"}}><h4>Language</h4></Col>
+                </Row>
+                <hr className="solid"/>
+                <Row style={{position: "relative", right: "40px"}}>
+                    <Col style={{position: "relative", left: "80px"}}><img className="settings-img" src={commentimage} alt="Comment Icon"/></Col>
+                    <Col className="settings-text-settings" style={{float: "right"}}><h4>Feedback</h4></Col>
+                </Row>
+                <hr className="solid"/>
+                <Row style={{position: "relative", right: "40px"}}>
+                    <Col style={{position: "relative", left: "80px"}}><img className="settings-img" src={faqimage} alt="FAQ Icon"/></Col>
+                    <Col className="settings-text-settings" style={{float: "right"}}><h4>FAQ</h4></Col>
+                </Row>
+                <hr className="solid"/>
+            </Container>    
+            <Accordion className="col-sm-9 mx-auto" style={{paddingBottom: "20px"}}>
                 <Accordion.Item eventKey="0" className="accordion-item-settings">
                     <Accordion.Header>What do i do if i lost an item?</Accordion.Header>
                     <Accordion.Body>
@@ -56,7 +88,7 @@ function Settings(){
                     </Accordion.Body>
                 </Accordion.Item>
             </Accordion>
-        </>
+        </Container>
     )
 }
 

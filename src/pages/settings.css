@@ -1,10 +1,7 @@
-body.dark-mode-theme{
-    background-color: black;
-    color: white;
-}
-body.light-mode-theme{
-    background-color: rgb(245, 245, 235);
-    color: black;
+
+.settings-overall-settings{
+    background-color: beige;
+    width: 50%;
 }
 .accordion-settings{
     width: 40%;
@@ -29,4 +26,23 @@ body.light-mode-theme{
     font-weight: bold;
     text-align: center;
     align-content: center;
+}
+.settings-text-settings{
+    font-weight: bold;
+    text-align: left;
+    align-content: center;
+}
+.settings-img {
+    width: 50px;
+    height: 50px;
+    opacity: 0.8;
+    text-align: center;
+}
+hr.solid{
+    border-top: 3px solid #bbb;
+    padding: 0px;
+    width: 80%;
+    position: relative;
+    left: 55px
+
 }
