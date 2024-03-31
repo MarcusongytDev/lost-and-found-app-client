@@ -1,5 +1,5 @@
 .container1{
-    background-color: #f9f9f9;
+    background-color: transparent;
     padding: 40px;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
@@ -9,12 +9,14 @@
 
 .form-row{
     display: flex; 
+    color: #fff;
     margin: 40px auto;
     width: 1000px;
 }
 
 .form-row1{
     display: flex;
+    color: #fff;
     align-items: center;
     margin: 40px auto;
     width: 1000px;
@@ -22,12 +24,14 @@
 
 .form-row2{
     display: flex;
+    color: #fff;
     align-items: center;
     width: 1000px;
 }
 
 .message-row{
     display: flex;
+    color: #fff;
     align-items: center;
     margin: 40px auto;
     width: 1000px;
@@ -49,3 +53,8 @@
     background-color: #c4d0dc;
 
 }
+
+.text-center{
+    color:aqua;
+}
+
