@@ -1,7 +1,7 @@
 import React, { Component, useEffect, useState } from 'react';
 import './App.css';
 import {BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom'; // Install components, router, route
-import Home from "./pages/home";
+import Home from "./pages/NewHomePage";
 import lostItemCatalog from "./pages/lostItemCatalog";
 import LostItemNotice from './pages/lostItemNotice';
 import FoundItemNotice from './pages/foundItemNotice';

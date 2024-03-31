@@ -1,0 +1,199 @@
+.never-lose-again,
+.we-are-committed {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.never-lose-again {
+  width: 676px;
+  font-size: 80px;
+  letter-spacing: 0.01em;
+}
+.we-are-committed {
+  width: 632px;
+  font-size: var(--font-size-5xl);
+  text-decoration: underline;
+  line-height: 32px;
+}
+.looking-for-an {
+  position: relative;
+  line-height: 18px;
+}
+.primary-button {
+  border-radius: var(--br-21xl);
+  background-color: var(--color-gray-500);
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  padding: var(--padding-5xl) var(--padding-37xl);
+  text-align: left;
+  color: var(--color-white);
+}
+.found-an-item {
+  width: 194px;
+  position: relative;
+  line-height: 18px;
+  align-items: center;
+  height: 21px;
+  flex-shrink: 0;
+}
+.content,
+.found-an-item,
+.primary-button1 {
+  display: flex;
+  justify-content: center;
+}
+.primary-button1 {
+  width: 307px;
+  border-radius: var(--br-21xl);
+  background-color: var(--color-gray-500);
+  overflow: hidden;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: var(--padding-5xl) var(--padding-37xl);
+  box-sizing: border-box;
+  color: var(--color-white);
+}
+.content {
+  align-self: stretch;
+  height: 546px;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+}
+
+.line-icon,
+.new-home-page-child1,
+.new-home-page-inner {
+  position: absolute;
+  top: 12px;
+  left: 1406px;
+  max-height: 100%;
+  width: 43px;
+}
+.line-icon,
+.new-home-page-child1 {
+  top: 24px;
+}
+.new-home-page-child1 {
+  top: 0;
+}
+.rectangle-div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--color-darkslategray-400);
+  width: 1512px;
+  height: 75px;
+}
+.new-home-page-child3 {
+  position: absolute;
+  top: 50px;
+  left: 1438px;
+  max-height: 100%;
+  width: 43px;
+}
+.new-home-page {
+  width: 100%;
+  position: relative;
+  background-color: var(--color-white);
+  height: 982px;
+  overflow: hidden;
+  text-align: center;
+  font-size: var(--font-size-xs);
+  color: var(--color-white);
+  font-family: var(--font-inter);
+}
+.never-lose-again,
+.we-are-committed {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.never-lose-again {
+  width: 676px;
+  font-size: 80px;
+  letter-spacing: 0.01em;
+}
+.we-are-committed {
+  width: 632px;
+  font-size: var(--font-size-5xl);
+  text-decoration: underline;
+  line-height: 32px;
+}
+.looking-for-an {
+  position: relative;
+  line-height: 18px;
+}
+.found-an-item {
+  width: 194px;
+  position: relative;
+  line-height: 18px;
+  align-items: center;
+  height: 21px;
+  flex-shrink: 0;
+}
+.content,
+.found-an-item,
+.primary-button1 {
+  display: flex;
+  justify-content: center;
+}
+.primary-button,
+.primary-button1 {
+  width: 307px; /* Set a fixed width for the buttons */
+  height: 50px; /* Increase the height of the buttons */
+  border-radius: 25px; /* Set border radius for rounded edges */
+  background-color: white; /* Change background color to white */
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: center; /* Center text vertically */
+  justify-content: center;
+  padding: 0 20px; /* Adjust padding for better appearance */
+  text-align: center;
+  color: black; /* Change text color to black */
+  font-size: 16px; /* Adjust font size as needed */
+  font-weight: bold; /* Ensure text is bold */
+  text-transform: uppercase; /* Convert text to uppercase */
+  text-decoration: none; /* Remove underline */
+  cursor: pointer; /* Add pointer cursor on hover */
+  transition: background-color 0.3s ease; /* Smooth transition on hover */
+}
+
+.primary-button:hover,
+.primary-button1:hover {
+  background-color: #e0e0e0; /* Change background color on hover */
+}
+
+.content {
+  align-self: stretch;
+  height: 546px;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+}
+
+.line-icon,
+.new-home-page-child1,
+.new-home-page-inner {
+  position: absolute;
+  top: 12px;
+  left: 1406px;
+  max-height: 100%;
+  width: 43px;
+}
+
+.new-home-page {
+  width: 100%;
+  position: relative;
+  background-color: var(--color-white);
+  text-align: center;
+  font-size: var(--font-size-xs);
+  color: var(--color-white);
+  font-family: var(--font-inter);
+}
