@@ -8,6 +8,8 @@ import FoundItemNotice from './pages/foundItemNotice';
 import Template from './pages/template';
 import ContactFinder from './pages/contactFinder';  
 import Settings from './pages/settings';
+import filteredSearch from './pages/filteredSearch';
+import FilteredSearch from './pages/filteredSearch';
 
 
 
@@ -24,6 +26,7 @@ function Apps(){
             <Route path = "settings" exact element={<Settings/>} />
             <Route path = "foundItemNotice" exact element={<FoundItemNotice/>} />
             <Route path = "contactFinder" exact element={<ContactFinder/>} /> 
+            <Route path = "filteredSearch" exact element={<FilteredSearch/>} /> 
           </Route>
         </Routes>
       </Router>
