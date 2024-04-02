@@ -8,11 +8,14 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import './template.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import DuneBackground from '../assets/DuneBackgroundImage.png';
+import WaveBackground from '../assets/WaveBackgroundImage.jpg';
 
 function Template(){
     return(
         // Navigation Bar
         <>
+            <body className="template-background"></body>
             <Navbar expand="lg" className="justify-content-center navbar-dark navbar-custom">
                 <Container fluid>
                 <Navbar.Brand className="navbar-custom" href="/home">Lost & Found</Navbar.Brand>

@@ -46,7 +46,7 @@ function LostItemCatalog() {
                 <LIC_Card/>
               </Col>
               <Col xs={4} className="LIC-Flexbox">
-                  <LIC_Card/>
+                <LIC_Card/>
               </Col>
             </Row>
           </Container>
