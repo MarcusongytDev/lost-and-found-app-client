@@ -1,0 +1,8 @@
+.LIC-Catalog{
+    align-self: center;
+}
+.LIC-Flexbox{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
