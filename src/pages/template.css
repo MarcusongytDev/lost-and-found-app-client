@@ -32,10 +32,10 @@ color: black;
 }
 body{
     height: 100vh;
-    background-image: url("../assets/DuneBackgroundImage.png");
+    background-image: url("../assets/CaravanBackground.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    background-position-y: bottom;
+    background-position-y: top;
     background-attachment: fixed;
 }

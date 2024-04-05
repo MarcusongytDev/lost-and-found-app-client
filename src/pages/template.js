@@ -8,8 +8,6 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import './template.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import DuneBackground from '../assets/DuneBackgroundImage.png';
-import WaveBackground from '../assets/WaveBackgroundImage.jpg';
 
 function Template(){
     return(
