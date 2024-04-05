@@ -7,7 +7,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './LIC_Card.css';
-import tempImage from "../assets/questionmark-icon.png";
+import tempImage from "../../assets/questionmark-icon.png"
 
 function LIC_Card(){
     let navigate = useNavigate();

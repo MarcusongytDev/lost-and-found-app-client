@@ -11,7 +11,7 @@ import axios from 'axios';
 import {useEffect, useState} from 'react'; // Used for api calls to server
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './lostItemCatalog.css';
-import LIC_Card from "../components/LIC_Card";
+import LIC_Card from "../components/UI/LIC_Card";
 import tempImage from "../assets/questionmark-icon.png";
 
 

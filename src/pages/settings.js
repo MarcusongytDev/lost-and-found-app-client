@@ -9,7 +9,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './settings.css';
-import Toggle from '../components/modeToggleBtn';
+import Toggle from '../components/UI/modeToggleBtn';
 import bugimage from '../assets/bug-icon.jpg';
 import qnimage from '../assets/questionmark-icon.png';
 import faqimage from '../assets/faq-icon.png';
