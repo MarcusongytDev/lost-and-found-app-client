@@ -34,26 +34,28 @@ function LostItemNotice() {
   };
 
   return (
-    <div className="LIN-container my-5 lostItemNotice">
-      <h2 className="LIN-heading text-center mb-4">Report a Lost Item</h2>
-      <Formik initialValues={initialValues} onSubmit={onSubmit} validationSchema={validationSchema}>
-        <Form>
-          <div className="LIN-form-row">
-            <FormGroup label="Name" name="name" type="text" placeholder="Name" />
-            <FormGroup label="Location of Lost Item" name="location" type="text" placeholder="Location of Lost Item" />
-          </div>
-          <div className="LIN-form-row">
-            <FormGroup label="Email" name="email" type="email" placeholder="Email" />
-            <FormGroup label="Item Filter (Keyword)" name="itemFilter" type="text" placeholder="Item Filter (Keyword)" />
-          </div>
-          <div className="LIN-form-row">
-            <FormGroup label="Phone Number" name="phoneNumber" type="text" placeholder="Phone Number" />
-            <FormGroup label="Description" name="description" as="textarea" placeholder="Description" />
-          </div>
-          <button type="submit" className="btn btn-primary mt-3">Submit</button>
-        </Form>
-      </Formik>
-    </div>
+    <body className='backgroundsettings'>
+      <div className="LIN-container my-5 lostItemNotice">
+        <h2 className="LIN-heading text-center mb-4">Report a Lost Item</h2>
+        <Formik initialValues={initialValues} onSubmit={onSubmit} validationSchema={validationSchema}>
+          <Form>
+            <div className="LIN-form-row">
+              <FormGroup label="Name" name="name" type="text" placeholder="Name" />
+              <FormGroup label="Location of Lost Item" name="location" type="text" placeholder="Location of Lost Item" />
+            </div>
+            <div className="LIN-form-row">
+              <FormGroup label="Email" name="email" type="email" placeholder="Email" />
+              <FormGroup label="Item Filter (Keyword)" name="itemFilter" type="text" placeholder="Item Filter (Keyword)" />
+            </div>
+            <div className="LIN-form-row">
+              <FormGroup label="Phone Number" name="phoneNumber" type="text" placeholder="Phone Number" />
+              <FormGroup label="Description" name="description" as="textarea" placeholder="Description" />
+            </div>
+            <button type="submit" className="btn btn-primary mt-3">Submit</button>
+          </Form>
+        </Formik>
+      </div>
+    </body>
   );
 }
 

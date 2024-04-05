@@ -30,7 +30,7 @@ body.light-mode-theme{
 background-color: rgb(245, 245, 235);
 color: black;
 }
-body{
+body.backgroundsettings{
     height: 100vh;
     background-image: url("../assets/CaravanBackground.jpg");
     background-position: center;

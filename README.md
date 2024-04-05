@@ -77,3 +77,5 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 •	Install react-bootstrap to use for easier HTML component creation npm install react-bootstrap bootstrap
 •	Install react-responsive, npm install react-responsive
 •	Install react-toggle, npm install react-toggle
+    npm install @googlemaps/js-api-loader
+    npm install "@vis.gl/react-google-maps"

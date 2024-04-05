@@ -30,26 +30,28 @@ function ContactFinder() {
   };
 
   return (
-    <div className="container1 my-5 contactFinder">
-      <h2 className="text-center mb-4">Contact Finder</h2>
-      <Formik initialValues={initialValues} onSubmit={onSubmit} validationSchema={validationSchema}>
-        <Form>
-          <div className="form-row">
-            <FormGroup label="Name" name="name" type="text" placeholder="Name" />
-           </div>
-          <div className="form-row1">
-            <FormGroup label="Email" name="email" type="email" placeholder="Email" />
-          </div>
-          <div className="form-row2">
-            <FormGroup label="Phone Number" name="phoneNumber" type="text" placeholder="Phone Number" />
-          </div>
-          <div className="message-row">
-          <FormGroup label="Message" name="message" as="textarea" placeholder="Message for the person who found your item" />
-          </div>
-          <button type="sendmessage" className="sendmessagebtn">Send Message</button>
-        </Form>
-      </Formik>
-    </div>
+    <body className='backgroundsettings'>
+      <div className="container1 my-5 contactFinder">
+        <h2 className="text-center mb-4">Contact Finder</h2>
+        <Formik initialValues={initialValues} onSubmit={onSubmit} validationSchema={validationSchema}>
+          <Form>
+            <div className="form-row">
+              <FormGroup label="Name" name="name" type="text" placeholder="Name" />
+            </div>
+            <div className="form-row1">
+              <FormGroup label="Email" name="email" type="email" placeholder="Email" />
+            </div>
+            <div className="form-row2">
+              <FormGroup label="Phone Number" name="phoneNumber" type="text" placeholder="Phone Number" />
+            </div>
+            <div className="message-row">
+            <FormGroup label="Message" name="message" as="textarea" placeholder="Message for the person who found your item" />
+            </div>
+            <button type="sendmessage" className="sendmessagebtn">Send Message</button>
+          </Form>
+        </Formik>
+      </div>
+      </body>
   );
 }
 
