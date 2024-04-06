@@ -44,3 +44,76 @@
 .LIN-submitButton:hover {
   background-color: #0056b3;
 }
+
+/* Tag input specific styles */
+.ReactTags__tags {
+  border: none;
+  padding: 0;
+}
+
+.ReactTags__tagInput {
+  margin: 0;
+  width: 100%;
+}
+
+.ReactTags__tagInputField {
+  width: 100%;
+  margin: 0;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  padding: 10px 15px;
+  font-size: 14px;
+}
+
+.ReactTags__selected {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 5px;
+  border-radius: 20px;
+}
+
+.ReactTags__tag {
+  margin: 2px;
+  background-color: #007bff;
+  border-radius: 15px;
+  padding: 5px 8px;
+  color: white;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+}
+
+.ReactTags__remove {
+  margin-left: 8px;
+  cursor: pointer;
+}
+
+.ReactTags__suggestions {
+  position: absolute;
+  z-index: 2;
+}
+
+.ReactTags__suggestionActive {
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  padding: 5px 15px;
+}
+
+/* Update based on your preferences for the suggestion list */
+.ReactTags__suggestions ul {
+  list-style: none;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  background: white;
+  width: 100%;
+  padding: 0;
+}
+
+.ReactTags__suggestions li {
+  padding: 5px 15px;
+  border-bottom: 1px solid #ccc;
+}
+
+.ReactTags__suggestions li:hover {
+  background-color: #f7f7f7;
+}
