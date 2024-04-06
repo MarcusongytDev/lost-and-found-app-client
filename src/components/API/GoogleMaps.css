@@ -1,0 +1,14 @@
+.combobox-input{
+    width: 100%;
+    padding: 0.5rem;
+}
+.places-container{
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    right: 0px;
+}
+.map-container{
+    width: 100%;
+    height: 100vh;
+}

@@ -79,3 +79,8 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 •	Install react-toggle, npm install react-toggle
     npm install @googlemaps/js-api-loader
     npm install "@vis.gl/react-google-maps"
+    npm install "use-places-autocomplete"
+    npm config set legacy-peer-deps true
+    npm install "@reach/combobox"
+    npm install "@react-google-maps/api"
+    npm install "@ubilabs/google-maps-react-hooks"

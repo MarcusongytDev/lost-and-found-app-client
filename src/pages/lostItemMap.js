@@ -1,14 +1,16 @@
 import { Container } from 'react-bootstrap';
 import './lostItemCatalog.css';
-import GoogleMaps from "../components/API/GoogleMaps.js";
+import Maps from "../components/API/GoogleMaps.js";
 
 function LostItemMap(){
 
     return(
         <Container fluid>
             <body>
-                <h1>whats good bruh</h1>
-                <div id="google-maps"><GoogleMaps/></div>
+                <div id="google-maps">
+                    <h1>Hi</h1>
+                    <Maps/>
+                </div>
             </body>
         </Container>
     )
