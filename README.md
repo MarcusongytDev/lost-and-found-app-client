@@ -84,3 +84,6 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
     npm install "@reach/combobox"
     npm install "@react-google-maps/api"
     npm install "@ubilabs/google-maps-react-hooks"
+    npm install "react-tag-input"
+    npm install 'react-dnd-html5-backend'
+    npm install 'react-dnd'
