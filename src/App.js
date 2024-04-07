@@ -1,6 +1,6 @@
 import React, { Component, useEffect, useState } from 'react';
 import './App.css';
-import {BrowserRouter as Router, Routes, Route, Link, Navigate} from 'react-router-dom'; // Install components, router, route
+import {BrowserRouter as Router, Routes, Route, Navigate} from 'react-router-dom'; // Install components, router, route
 import NewHomePage from "./pages/NewHomePage";
 import LostItemCatalog from "./pages/lostItemCatalog";
 import LostItemNotice from './pages/lostItemNotice';
@@ -10,6 +10,8 @@ import ContactFinder from './pages/contactFinder';
 import Settings from './pages/settings';
 import FilteredSearch from './pages/filteredSearch';
 import LostItemMap from './pages/lostItemMap';
+import LoginPage from './pages/loginPage';
+import { Link } from 'react-router-dom';
 
 
 
@@ -28,6 +30,7 @@ function Apps(){
             <Route path = "foundItemNotice" exact element={<><Template/><FoundItemNotice/></>} />
             <Route path = "contactFinder" exact element={<><Template/><ContactFinder/></>} /> 
             <Route path = "filteredSearch" exact element={<><Template/><FilteredSearch/></>} />
+            <Route path = "loginPage" exact element={<><Template/><LoginPage/></>} />
             <Route path = "LostItemMap" exact element={<LostItemMap/>} /> 
           </Route>
         </Routes>

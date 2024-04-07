@@ -1,4 +1,4 @@
-.container1{
+.containerCF{
     background-color: transparent;
     padding: 40px;
     border-radius: 8px;
@@ -7,38 +7,37 @@
     margin: 40px auto; /* used to be 40px */
 }
 
-.form-row{
-    display: flex; 
-    color: #fff;
-    margin: 40px auto;
-    width: 1000px;
+.contact-finder-input{
+    width: 500;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 15px;
 }
 
-.form-row1{
-    display: flex;
-    color: #fff;
-    align-items: center;
-    margin: 40px auto;
-    width: 1000px;
+
+
+.contact-finder-label{
+    color: #090909;  
 }
 
-.form-row2{
-    display: flex;
-    color: #fff;
-    align-items: center;
-    width: 1000px;
+
+.contact-finder-input1{
+    width: 800px;
+    padding: 10px;
+    border: 1px solid #080505;
+    border-radius: 4px;
+    margin-bottom: 15px; 
 }
 
-.message-row{
-    display: flex;
-    color: #fff;
-    align-items: center;
-    margin: 40px auto;
-    width: 1000px;
+.contact-finder-label1{
+    color: #090909;  
+    
 }
+
 
 .sendmessagebtn{
-    background-color: #4879ad;
+    background-color: #212c39;
     border: none;
     padding: 10px 30px;
     border-radius: 20px;
@@ -47,14 +46,24 @@
     width: 1000px;
     max-width: 200px;
     margin: 20px auto 0;
+    color: #fff;
 }
+
+
 
 .sendmessagebtn:hover{
     background-color: #c4d0dc;
 
 }
 
-.text-center{
-    color:aqua;
+.text-centerCF{
+    display: flex;
+    flex-direction: column ;    
+    align-items: center;
+    gap: 9px;
+    width: 100%;
+    font-size: 35px;
+    font-weight: 700;
+   
 }
 

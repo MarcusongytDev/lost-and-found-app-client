@@ -26,8 +26,9 @@ function FilteredSearch() {
   };
 
   return (
-    <div className="container1 my-5 filteredSearch">
-      <h2 className="text-center mb-4">Search for lost item</h2>
+    <body className='backgroundsettings'>
+    <div className="containerFS my-5 filteredSearch">
+      <h2 className="text-centerFS mb-4">Search for lost item</h2>
       <div className="flexbox-container">
       <div className="form-wrapper">
       <Formik initialValues={initialValues} onSubmit={onSubmit} validationSchema={validationSchema}>
@@ -36,15 +37,16 @@ function FilteredSearch() {
             <FormGroup label="Name of lost item" name="name" type="text" placeholder="Eg. Waterbottle" />
           </div>
           <div className="FSform-row1">
-            <FormGroup label="Location item was lost" name="location" type="text" placeholder="Eg. Pioneer" />
+            <FormGroup label="Location of lost item" name="location" type="text" placeholder="Eg. Pioneer" />
           </div>
           <div class='FSparent'>
+          <h5 className="text-centerFilter mb-4">Filter:</h5>
             <div class='FSchild'>
-              <h5 className="text-center mb-4">Filter:</h5>
+              
             </div>
             <div class='FSchild'>
               <div className="FSform-row2">
-                <FormGroup label="Item category:" name="itemCategory" type="text" placeholder="Item cateogory" />
+                <FormGroup label="Item category:" name="itemCategory" type="text" placeholder="Item category" />
               </div>
               <div className="FSform-row2">
                 <FormGroup label="Item colour:" name="itemColour" type="text" placeholder="Item colour" />
@@ -61,6 +63,7 @@ function FilteredSearch() {
       </div>
       </div>
     </div>
+    </body>
   );
 }
 

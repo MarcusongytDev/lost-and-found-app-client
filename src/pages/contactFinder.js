@@ -31,38 +31,46 @@ function ContactFinder() {
 
   return (
     <body className='backgroundsettings'>
-      <div className="container1 my-5 contactFinder">
-        <h2 className="text-center mb-4">Contact Finder</h2>
+      <div className="containerCF my-5 contactFinder">
+        <h2 className="text-centerCF mb-4">Contact Finder</h2>
         <Formik initialValues={initialValues} onSubmit={onSubmit} validationSchema={validationSchema}>
           <Form>
-            <div className="form-row">
-              <FormGroup label="Name" name="name" type="text" placeholder="Name" />
+            <div className="form-group row">
+              <label htmlFor="name" className="col-sm-2 col-form-label contact-finder-label">Name</label>
+              <div className="col-sm-10">
+                <Field name="name" type="text" className="form-control contact-finder-input" placeholder="Name" />
+                <ErrorMessage name="name" component="div" className="error-message" />
+              </div>
             </div>
-            <div className="form-row1">
-              <FormGroup label="Email" name="email" type="email" placeholder="Email" />
+            <div className="form-group row">
+              <label htmlFor="email" className="col-sm-2 col-form-label contact-finder-label">Email</label>
+              <div className="col-sm-10">
+                <Field name="email" type="email" className="form-control contact-finder-input" placeholder="Email" />
+                <ErrorMessage name="email" component="div" className="error-message" />
+              </div>
             </div>
-            <div className="form-row2">
-              <FormGroup label="Phone Number" name="phoneNumber" type="text" placeholder="Phone Number" />
+            <div className="form-group row">
+              <label htmlFor="phoneNumber" className="col-sm-2 col-form-label contact-finder-label">Phone No.</label>
+              <div className="col-sm-10">
+                <Field name="phoneNumber" type="text" className="form-control contact-finder-input" placeholder="Phone Number" />
+                <ErrorMessage name="phoneNumber" component="div" className="error-message" />
+              </div>
             </div>
-            <div className="message-row">
-            <FormGroup label="Message" name="message" as="textarea" placeholder="Message for the person who found your item" />
+            <div className="form-group row">
+              <label htmlFor="message" className="col-sm-2 col-form-label contact-finder-label1">Message</label>
+              <div className="col-sm-10">
+                <Field name="message" as="textarea" className="form-control ccontact-finder-input1" placeholder="Message for the person who found your item" />
+                <ErrorMessage name="message" component="div" className="error-message" />
+              </div>
             </div>
-            <button type="sendmessage" className="sendmessagebtn">Send Message</button>
+            <button type="submit" className="sendmessagebtn">Submit</button>
           </Form>
         </Formik>
       </div>
-      </body>
-  );
+    </body>
+ );
 }
 
-const FormGroup = ({ label, name, type, placeholder, as }) => (
-  <div className="form-group col-md-6">
-    <label htmlFor={name}>{label}</label>
-    <Field name={name} type={type} as={as} className="form-control" placeholder={placeholder} />
-    <ErrorMessage name={name} component="div" className="error-message" />
-  </div>
-);
-
-export default ContactFinder
+export default ContactFinder;
 
 
