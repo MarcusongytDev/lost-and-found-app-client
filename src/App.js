@@ -11,6 +11,7 @@ import Settings from './pages/settings';
 import FilteredSearch from './pages/filteredSearch';
 import LostItemMap from './pages/lostItemMap';
 import LoginPage from './pages/loginPage';
+import LostItemDescription from './pages/lostItemDescription';
 import { Link } from 'react-router-dom';
 
 
@@ -32,6 +33,7 @@ function Apps(){
             <Route path = "filteredSearch" exact element={<><Template/><FilteredSearch/></>} />
             <Route path = "loginPage" exact element={<><Template/><LoginPage/></>} />
             <Route path = "LostItemMap" exact element={<LostItemMap/>} /> 
+            <Route path = "LostItemDescription" exact element={<LostItemDescription/>} /> 
           </Route>
         </Routes>
       </Router>
