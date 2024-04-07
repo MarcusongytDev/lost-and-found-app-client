@@ -1,13 +1,11 @@
-import { useState} from "react";
+import { useEffect, useState} from "react";
 import {useLoadScript} from "@react-google-maps/api";
 import {
   APIProvider,
   Map,
   AdvancedMarker,
-  Marker,
   Pin,
   InfoWindow,
-  useMap,
 } from "@vis.gl/react-google-maps";
 import usePlacesAutoComplete, {
   getGeocode,
@@ -33,6 +31,12 @@ export default function GoogleMaps() {
   return <GoogleMap />;
 }
 
+const SINGAPORE_BOUNDS = {
+  north: 1.21013,
+  south: 103.60567,
+  west: 1.47156,
+  east: 104.04364
+};
 
 function GoogleMap() {
   const [open, setOpen] = useState(false);
@@ -41,12 +45,11 @@ function GoogleMap() {
 
   // Selected allows us to pass a location and render it as a market on the map
   const [selected, setSelected] = useState({ lat: 1.349, lng: 103.739 });
-  const map = useMap();
 
   return (
     <APIProvider>
       <PlacesAutocomplete setSelected = {setSelected}/>
-      <Map defaultZoom={14} defaultCenter={selected} mapId={"95ff34d67269854f"} className="map-container">
+      <Map defaultZoom={15} defaultCenter={selected} mapId={"95ff34d67269854f"} className="map-container">
         <AdvancedMarker position={position} onClick={() => setOpen(true)}>
           <Pin
             background={"grey"}
@@ -60,13 +63,13 @@ function GoogleMap() {
             <p>Test</p>
           </InfoWindow>
         )}
-        {selected && <Marker position={selected} />}
+        {selected && <><AdvancedMarker position={selected} /><InfoWindow disableAutoPan={false} position={selected} ><p>YOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO</p></InfoWindow></>}
       </Map>
     </APIProvider>
   );
 }
 
-const PlacesAutocomplete = ({setSelected, setPosition}) =>{
+const PlacesAutocomplete = ({setSelected}) =>{
   const {
     ready,
     value,

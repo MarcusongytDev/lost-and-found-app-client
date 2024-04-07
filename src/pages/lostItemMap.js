@@ -1,6 +1,7 @@
 import { Container } from 'react-bootstrap';
 import './lostItemCatalog.css';
 import Maps from "../components/API/GoogleMaps.js";
+import GoogleMaps from "../components/API/GoogleMaps.js";
 
 function LostItemMap(){
 
@@ -8,8 +9,7 @@ function LostItemMap(){
         <Container fluid>
             <body>
                 <div id="google-maps">
-                    <h1>Hi</h1>
-                    <Maps/>
+                    <GoogleMaps/>
                 </div>
             </body>
         </Container>
