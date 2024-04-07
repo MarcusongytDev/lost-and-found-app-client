@@ -87,3 +87,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
     npm install "react-tag-input"
     npm install 'react-dnd-html5-backend'
     npm install 'react-dnd'
+    npm install react-datepicker
