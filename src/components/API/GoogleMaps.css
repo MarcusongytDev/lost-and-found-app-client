@@ -1,11 +1,19 @@
 .combobox-input{
-    width: 100%;
-    padding: 0.5rem;
+    width: 30%;
+    padding-left: 15px;
+    z-index: 1;
+    position: fixed;
+    top: 10px;
+    left: 470px;
+    align-self: center;
+    height: 40px;
+    border-width: 1px;
+    border-radius: 30px;
 }
 .places-container{
     position: fixed;
     top: 0px;
-    width: 100%;
+    width: 50%;
     right: 0px;
 }
 .map-container{

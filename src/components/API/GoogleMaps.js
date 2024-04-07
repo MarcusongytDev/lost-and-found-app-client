@@ -48,7 +48,7 @@ function GoogleMap() {
 
   return (
     <APIProvider>
-      <PlacesAutocomplete setSelected = {setSelected}/>
+      <PlacesAutocomplete className="Gmaps-Searchbar" setSelected = {setSelected}/>
       <Map defaultZoom={15} defaultCenter={selected} mapId={"95ff34d67269854f"} className="map-container">
         <AdvancedMarker position={position} onClick={() => setOpen(true)}>
           <Pin
