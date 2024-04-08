@@ -51,7 +51,7 @@ export default LostItemDescription;
 
 function LostItemDescription() {
     const { id } = useParams();
-
+    const [postObject, setPostObject] = useState({})
     // Example product details
     // In a real application, you would fetch these details from an API or a Redux store
     const product = {
@@ -66,6 +66,12 @@ function LostItemDescription() {
         imageUrl: "https://via.placeholder.com/150"
     };
 
+    // useEffect(() => {
+    //   axios.get("http://localhost:5000/postObject").then((response) => {
+    //     setPostObject(response);
+    //   });
+    // }, []);
+
     return (
         <div className="product-detail-page">
             <header className="page-header">
@@ -78,7 +84,7 @@ function LostItemDescription() {
                 <div className="product-info">
                     <p><strong>Name:</strong> {product.name}</p>
                     <p><strong>Location:</strong> {product.location}</p>
-                    <p><strong>Date & Time Found: </strong></p>
+                    <p><strong>Date Found: </strong></p>
                     <p><strong>Email:</strong> {product.email}</p>
                     <p><strong>Phone Number:</strong> {product.phoneNumber}</p>
                     <p><strong>Item Filter:</strong> {product.itemFilter}</p>

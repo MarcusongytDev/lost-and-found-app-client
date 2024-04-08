@@ -34,6 +34,7 @@ function LostItemNotice() {
       ...values,
       itemFilter: tags.map(tag => tag.text), // Transform tags into an array of text values
     };
+    console.log(dataToSubmit);
 
     axios.post('http://localhost:5000/lostitems', dataToSubmit)
       .then(() => {
