@@ -57,18 +57,12 @@ function GoogleMap() {
             glyphColor={"purple"}
           />
         </AdvancedMarker>
-
-        {open && (
-          <InfoWindow position={position} onCloseClick={() => setOpen(false)}>
-            <p>Test</p>
-          </InfoWindow>
-        )}
         {selected && (
           <>
             <AdvancedMarker position={selected}>
               <Pin />
             </AdvancedMarker>
-            <InfoWindow disableAutoPan={false} position={selected} ><p className="disable-opacity">test</p></InfoWindow>
+            <InfoWindow disableAutoPan={false} position={selected} ></InfoWindow>
           </>
         )
         }
