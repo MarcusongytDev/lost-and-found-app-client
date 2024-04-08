@@ -26,6 +26,12 @@ function LostItemCatalog() {
     //     })
     // });
     let navigate = useNavigate();
+    const routeChange = () =>{
+      let path = "";
+      navigate(path);
+    }
+
+    // Gets all the posts in database, use .map to create that number of posts in the row.
 
     // const [listOfPosts, setListOfPosts] = useState([]);
     // useEffect(() => {
@@ -35,77 +41,51 @@ function LostItemCatalog() {
     // }, [])
 
 
-return (
-  <>
-    {/* Header with Filter Bar */}
-    <Container fluid style={{textAlign: "center", paddingTop: "10px"}}>
-      <Row>
-        <Col md={8}>
-          <h1>Lost Items Reported</h1>
-        </Col>
-        <Col md={4} className="d-flex align-items-center justify-content-end">
-          <Form.Control type="text" placeholder="Keyword Filter" className="me-2" />
-        </Col>
-      </Row>
-    </Container>
-
-    {/* Item Catalog */}
-    <Container fluid className="LIC-Catalog" style={{paddingTop: "20px"}}>
-      <Row>
-        <Col xs={4} className="LIC-Flexbox">
-          <LIC_Card/>
-        </Col>
-        <Col xs={4} className="LIC-Flexbox">
-          <LIC_Card/>
-        </Col>
-        <Col xs={4} className="LIC-Flexbox">
-          <LIC_Card/>
-        </Col>
-      </Row>
-    </Container>
-
-    {/* Buttons */}
-    <Container fluid style={{textAlign: "center", margin: "20px 0"}}>
-      <Row>
-        <Col>
-          <Button variant="primary" href="/lostItemMap" onClick={() => routeChange('/map-view')}>Return to Map View</Button>
-        </Col>
-        <Col>
-          <Button variant="success" href="/lostItemNotice" onClick={() => routeChange('/post-notice')}>Can't Find Item, Post a Notice Now!</Button>
-        </Col>
-      </Row>
-    </Container>
-  </>
-);
-    return (
-        <>
-        {/* {listOfPosts.map((value, key) => {
-            //Put Cols here
-          });
-        } */}
-          {/* Header */}
-          <Container fluid style={{textAlign: "center", paddingTop: "10px"}}>
+  return (
+    <>
+      {/* Header with Filter Bar */}
+      <Container fluid style={{textAlign: "center", paddingTop: "10px"}}>
+        <Row>
+          <Col md={8}>
             <h1>Lost Items Reported</h1>
-          </Container>
-          {/* Item Catalog */}
-          <Container fluid className="LIC-Catalog" style={{paddingTop: "20px"}}>
-            <Row>
-              <Col xs={4} className="LIC-Flexbox">
-                <LIC_Card/>
-              </Col>
-              <Col xs={4} className="LIC-Flexbox">
-                <LIC_Card/>
-              </Col>
-              <Col xs={4} className="LIC-Flexbox">
-                <LIC_Card/>
-              </Col>
-              <Col xs={4} className="LIC-Flexbox">
-                <LIC_Card/>
-              </Col>
-            </Row>
-          </Container>
-        </>
-      );
-}
+          </Col>
+          <Col md={4} className="d-flex align-items-center justify-content-end">
+            <Form.Control type="text" placeholder="Keyword Filter" className="me-2" />
+          </Col>
+        </Row>
+      </Container>
+
+      {/* Item Catalog */}
+      <Container fluid className="LIC-Catalog" style={{paddingTop: "20px"}}>
+        <Row>
+          <Col xs={4} className="LIC-Flexbox">
+            <LIC_Card/>
+          </Col>
+          <Col xs={4} className="LIC-Flexbox">
+            <LIC_Card/>
+          </Col>
+          <Col xs={4} className="LIC-Flexbox">
+            <LIC_Card/>
+          </Col>
+          <Col xs={4} className="LIC-Flexbox">
+            <LIC_Card/>
+          </Col>
+        </Row>
+      </Container>
+
+      {/* Buttons */}
+      <Container fluid style={{textAlign: "center", margin: "20px 0", paddingBottom: "20px"}}>
+        <Row>
+          <Col>
+            <Button variant="primary" href="/lostItemMap" onClick={() => routeChange('/map-view')}>Return to Map View</Button>
+          </Col>
+          <Col>
+            <Button variant="success" href="/lostItemNotice" onClick={() => routeChange('/post-notice')}>Can't Find Item, Post a Notice Now!</Button>
+          </Col>
+        </Row>
+      </Container>
+    </>
+  )
+};
 
 export default LostItemCatalog;
