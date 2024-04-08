@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+/*import { useEffect, useMemo, useState } from "react";
 import { useMediaQuery } from "react-responsive";
 
 export function useColorScheme() {
@@ -28,3 +28,4 @@ export function useColorScheme() {
     setIsDark,
   };
 }
+*/

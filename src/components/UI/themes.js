@@ -1,4 +1,4 @@
-function setTheme(themeName, setClassName) {
+/*function setTheme(themeName, setClassName) {
     localStorage.setItem('theme', themeName);
     setClassName(themeName);
 }
@@ -23,3 +23,4 @@ module.exports = {
   setTheme,
   keepTheme
 };
+*/

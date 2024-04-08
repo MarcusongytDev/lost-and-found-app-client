@@ -4,7 +4,7 @@
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
   max-width: 800px; 
-  margin: 40px auto; /* used to be 40px */
+  margin: 40px auto;
 }
 
 .LIN-heading {
@@ -116,4 +116,18 @@
 
 .ReactTags__suggestions li:hover {
   background-color: #f7f7f7;
+}
+
+/* Override text color within .LIN-container for dark mode */
+body.dark-mode-theme .LIN-container,
+body.dark-mode-theme .LIN-container .LIN-formControl,
+body.dark-mode-theme .LIN-container .LIN-errorMessage,
+body.dark-mode-theme .LIN-container label {
+    color: black; /* Keeps text color black in dark mode */
+}
+
+/* Optionally, adjust the background and border color for better visibility in dark mode */
+body.dark-mode-theme .LIN-container {
+    background-color: #f9f9f9; /* Light background for the container */
+    border-color: #ddd; /* Lighter border if needed */
 }
