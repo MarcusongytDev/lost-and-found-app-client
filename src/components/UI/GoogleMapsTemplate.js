@@ -25,7 +25,10 @@ export default function GoogleMapsTemplate(){
         </div>
 
         <span style={{ position:"fixed", right:"13px", top:"70px", fontSize:"30px", cursor:"pointer", zIndex:"1"}} onClick={openNav}><img className="gmaps-navbar-icon" src={navbaricon} alt="NavBar Icon"/></span>
-        <div className='gmaps-template-cantfind'><a className="gmaps-template-link" href="/filteredSearch"><u>Can't find your item? Click here</u></a></div>
+        <div className="gmaps-template-container">
+            <div className='gmaps-template-catalog'><a className="gmaps-template-link" href="/lostItemCatalog"><u>View in Catalog</u></a></div>
+            <div className='gmaps-template-cantfind'><a className="gmaps-template-link" href="/lostItemNotice"><u>Can't find your item? Click here</u></a></div>
+        </div>
     </>
-    )
+    );
 }
