@@ -9,7 +9,7 @@ import GoogleMaps from "../components/API/GoogleMapsFinder.js"; // Import the Go
 function FoundItemNotice() {
     const [dateFound, setDateFound] = useState('');
     const [timeFound, setTimeFound] = useState('');
-    const [selectedLocation, setSelectedLocation] = useState(null); // State to store the selected location
+    const [selectedLocation, setSelectedLocation] = useState({}); // State to store the selected location
     const [name, setName] = useState('');
     const [description, setDescription] = useState(''); // State for description field
     const [email, setEmail] = useState(''); // State for email field
@@ -29,8 +29,8 @@ function FoundItemNotice() {
 
     const validationSchema = Yup.object({
         name: Yup.string().required('Name is required'),
-        datefound: Yup.date().required('Date Found is required'),
-        timefound: Yup.string().required('Time Found is required'),
+        datefound: Yup.date(),
+        timefound: Yup.string(),
         description: Yup.string().required('Description is required'),
         email: Yup.string().email('Invalid email address').required('Email is required'),
         phone: Yup.string().matches(/^[0-9]+$/, 'Must be a valid phone number').required('Phone number is required'),
@@ -38,14 +38,15 @@ function FoundItemNotice() {
     });
 
     const onSubmit = async (values) => {
+        console.log(selectedLocation);
         // Submit form data
         try {
             // Update the selected location directly on form submission
-            setSelectedLocation({ latitude: 123, longitude: 456 }); // Replace with the actual selected location
+            // setSelectedLocation({ latitude: 123, longitude: 456 }); // Replace with the actual selected location
             // Assuming you have a function to get the selected location from the map component
             await axios.post('http://localhost:5000/founditems', {
                 ...values,
-                location: { latitude: 123, longitude: 456 }, // Add selected location to form data
+                location: selectedLocation, // Add selected location to form data
                 name: name // Add name to form data
             });
         } catch (error) {
@@ -68,6 +69,10 @@ function FoundItemNotice() {
         setTags(newTags);
     };
 
+    function setlocation(location){
+        setSelectedLocation(location);
+    }
+
     return (
         <div className='backgroundsettings'>
             <div className="LIN-container my-5">
@@ -80,7 +85,7 @@ function FoundItemNotice() {
                                 <Field id="name" name="name" type="text" className="form-control LIN-formControl" />
                                 <ErrorMessage name="name" component="div" className="LIN-errorMessage" />
                             </div>
-                            <GoogleMaps selectedLocation={selectedLocation} /> {/* Render the GoogleMaps component */}
+                            <GoogleMaps setlocation={setlocation} /> {/* Render the GoogleMaps component */}
 
                             <div className="form-group">
                                 <label htmlFor="datefound">Date Found</label>

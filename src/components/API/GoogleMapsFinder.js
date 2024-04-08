@@ -21,48 +21,35 @@ import {
 import "@reach/combobox/styles.css";
 import './GoogleMapsFinder.css'
 
-export default function GoogleMaps() {
+export default function GoogleMaps({setlocation}) {
+
   const { isLoaded } = useLoadScript({
     googleMapsApiKey: "AIzaSyB5yzIMiOUagFda-20MnNBruQAGgdsVPfc",
     libraries: ["places"],
   });
 
-  if (!isLoaded) return <div>Loading...</div>;
-  return <GoogleMap />;
-}
+  
 
-const SINGAPORE_BOUNDS = {
-  north: 1.21013,
-  south: 103.60567,
-  west: 1.47156,
-  east: 104.04364
-};
-
-function GoogleMap() {
   const [open, setOpen] = useState(false);
   const position = { lat: 1.349, lng: 103.739 }
   // Get places library in google maps api
 
   // Selected allows us to pass a location and render it as a market on the map
-  const [selected, setSelected] = useState({ lat: 1.349, lng: 103.739 });
+  const [selected, setSelected] = useState(false);
+
+  if (!isLoaded) return <div>Loading...</div>;
 
   return (
     <APIProvider>
       <PlacesAutocomplete className="Gmaps-Searchbar" setSelected = {setSelected}/>
-      <Map defaultZoom={15} defaultCenter={selected} mapId={"95ff34d67269854f"} className="map-container">
-        <AdvancedMarker position={position} onClick={() => setOpen(true)}>
-          <Pin
-            background={"grey"}
-            borderColor={"green"}
-            glyphColor={"purple"}
-          />
-        </AdvancedMarker>
+      {/* <button type="submit" onClick={() => setlocation(selected)}></button> */}
+      <Map defaultZoom={15} defaultCenter={position} mapId={"95ff34d67269854f"} className="map-container">
         {selected && (
           <>
             <AdvancedMarker position={selected}>
               <Pin />
             </AdvancedMarker>
-            <InfoWindow disableAutoPan={false} position={selected} ></InfoWindow>
+            <InfoWindow disableAutoPan={false} position={selected} ><p>Selected Location</p>{setlocation(selected)}</InfoWindow>
           </>
         )
         }
@@ -71,7 +58,7 @@ function GoogleMap() {
   );
 }
 
-const PlacesAutocomplete = ({setSelected}) =>{
+const PlacesAutocomplete = ({setSelected}, {setlocation}) =>{
   const {
     ready,
     value,
@@ -87,6 +74,7 @@ const PlacesAutocomplete = ({setSelected}) =>{
     const results = await getGeocode({address});
     const {lat, lng} = await getLatLng(results[0]);
     setSelected({lat, lng});
+    // setlocation({lat, lng});
   }
   return (
     <Combobox onSelect={handleSelect}>
