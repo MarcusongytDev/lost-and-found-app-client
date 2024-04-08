@@ -58,10 +58,10 @@ function LostItemDescription() {
         id: id,
         name: "Lost Item Description",
         location: "Example Location",
-        dateFound: "10/10/2001",
+        dateTimeFound: "10/10/2001 10:00:00",
         email: "example@example.com",
         phoneNumber: "+1234567890",
-        itemFilter: "Example Filter",
+        itemFilters: "Example Filter",
         description: "This is an example product.",
         imageUrl: "https://via.placeholder.com/150"
     };

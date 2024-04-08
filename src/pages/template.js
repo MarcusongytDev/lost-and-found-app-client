@@ -15,12 +15,12 @@ function Template(){
         // Navigation Bar
         <>
             <body className="template-background"></body>
-            <Navbar expand="lg" className="justify-content-center navbar-dark navbar-custom">
+            <Navbar expand="sm" className="justify-content-center navbar-dark navbar-custom">
                 <Container fluid>
                 <Navbar.Brand className="navbar-custom" href="/home">Lost & Found</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />  
-                <Navbar.Collapse id="basic-navbar-nav">
-                    <NavDropdown title="Menu" id="basic-nav-dropdown">
+                <Navbar.Collapse id="responsive-navbar-nav">
+                    <NavDropdown title="Menu" id="collapsible-nav-dropdown">
                         <NavDropdown.Item href="/home">Home</NavDropdown.Item>
                         <NavDropdown.Item href="/lostItemNotice">Lost Item Notice</NavDropdown.Item>
                         <NavDropdown.Item href="/lostItemCatalog">Lost Item Catalog</NavDropdown.Item>

@@ -30,7 +30,6 @@ function LostItemCatalog() {
       let path = "";
       navigate(path);
     }
-
     // Gets all the posts in database, use .map to create that number of posts in the row.
 
     // const [listOfPosts, setListOfPosts] = useState([]);
@@ -70,6 +69,7 @@ function LostItemCatalog() {
           <Col xs={4} className="LIC-Flexbox" onClick={() => navigate("/LostItemDescription/:id")}>
             <LIC_Card/>
           </Col>
+
         </Row>
       </Container>
 
