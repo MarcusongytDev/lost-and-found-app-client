@@ -8,6 +8,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import './template.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import navbaricon from "../assets/navbar-dropdown-icon.png";
 
 function Template(){
     return(
@@ -19,15 +20,15 @@ function Template(){
                 <Navbar.Brand className="navbar-custom" href="/home">Lost & Found</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />  
                 <Navbar.Collapse id="basic-navbar-nav">
-                <NavDropdown title="Dropdown" variant="success" id="basic-nav-dropdown">
-                    <NavDropdown.Item href="/home">Home</NavDropdown.Item>
-                    <NavDropdown.Item href="/lostItemNotice">Lost Item Notice</NavDropdown.Item>
-                    <NavDropdown.Item href="/lostItemCatalog">Lost Item Catalog</NavDropdown.Item>
-                    <NavDropdown.Item href="/foundItemNotice">Found Item Notice</NavDropdown.Item>
-                    <NavDropdown.Item href="/settings">Settings</NavDropdown.Item>
-                    <NavDropdown.Item href="/contactFinder">Contact Finder</NavDropdown.Item>
-                    <NavDropdown.Divider />
-                </NavDropdown>
+                    <NavDropdown title="Menu" id="basic-nav-dropdown">
+                        <NavDropdown.Item href="/home">Home</NavDropdown.Item>
+                        <NavDropdown.Item href="/lostItemNotice">Lost Item Notice</NavDropdown.Item>
+                        <NavDropdown.Item href="/lostItemCatalog">Lost Item Catalog</NavDropdown.Item>
+                        <NavDropdown.Item href="/foundItemNotice">Found Item Notice</NavDropdown.Item>
+                        <NavDropdown.Item href="/settings">Settings</NavDropdown.Item>
+                        <NavDropdown.Item href="/contactFinder">Contact Finder</NavDropdown.Item>
+                        <NavDropdown.Divider />
+                    </NavDropdown>
                 </Navbar.Collapse>
                 </Container>
             </Navbar>
