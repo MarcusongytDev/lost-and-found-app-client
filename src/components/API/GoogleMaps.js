@@ -97,9 +97,10 @@ const PlacesAutocomplete = ({setSelected}) =>{
   const handleSelect = async(address) => {
     setValue(address, false);
     clearSuggestions();
-
+    console.log(address);
     const results = await getGeocode({address});
     const {lat, lng} = await getLatLng(results[0]);
+    console.log({lat, lng});
     setSelected({lat, lng});
   }
   return (

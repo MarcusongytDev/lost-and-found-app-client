@@ -58,6 +58,7 @@ function LostItemDescription() {
         id: id,
         name: "Lost Item Description",
         location: "Example Location",
+        dateFound: "10/10/2001",
         email: "example@example.com",
         phoneNumber: "+1234567890",
         itemFilter: "Example Filter",
@@ -77,6 +78,7 @@ function LostItemDescription() {
                 <div className="product-info">
                     <p><strong>Name:</strong> {product.name}</p>
                     <p><strong>Location:</strong> {product.location}</p>
+                    <p><strong>Date & Time Found: </strong></p>
                     <p><strong>Email:</strong> {product.email}</p>
                     <p><strong>Phone Number:</strong> {product.phoneNumber}</p>
                     <p><strong>Item Filter:</strong> {product.itemFilter}</p>
