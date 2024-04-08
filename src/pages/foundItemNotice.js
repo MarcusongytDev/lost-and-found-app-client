@@ -30,9 +30,9 @@ function FoundItemNotice() {
     formData.append('color', values.color);
     formData.append('datetimefound', datetimeFound);
     formData.append('photo', values.photo); // Append photo to form data
-
+    console.log(values);
     try {
-      await axios.post('http://localhost:5000/ApplicationService', formData, {
+      await axios.post('http://localhost:5000/post-lost-item', formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }

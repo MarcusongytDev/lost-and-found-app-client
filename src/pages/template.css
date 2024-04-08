@@ -12,6 +12,7 @@
     font-style: italic;
     font-weight: bold;
     height: 35px;
+    z-index: 3;
 }
 .template-background{
     /* Full height */

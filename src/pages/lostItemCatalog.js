@@ -25,13 +25,21 @@ function LostItemCatalog() {
     //     })
     // });
     let navigate = useNavigate();
-    const routeChange = () =>{
-      let path = "";
-      navigate(path);
-    }
+
+    // const [listOfPosts, setListOfPosts] = useState([]);
+    // useEffect(() => {
+    //   axios.get("http://localhost:5000/posts").then((response) => {
+    //     setListOfPosts(response.data);
+    //   });
+    // }, [])
+
 
     return (
         <>
+        {/* {listOfPosts.map((value, key) => {
+            //Put Cols here
+          });
+        } */}
           {/* Header */}
           <Container fluid style={{textAlign: "center", paddingTop: "10px"}}>
             <h1>Lost Items Reported</h1>
@@ -39,6 +47,9 @@ function LostItemCatalog() {
           {/* Item Catalog */}
           <Container fluid className="LIC-Catalog" style={{paddingTop: "20px"}}>
             <Row>
+              <Col xs={4} className="LIC-Flexbox">
+                <LIC_Card/>
+              </Col>
               <Col xs={4} className="LIC-Flexbox">
                 <LIC_Card/>
               </Col>
