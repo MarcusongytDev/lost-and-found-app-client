@@ -63,7 +63,15 @@ function GoogleMap() {
             <p>Test</p>
           </InfoWindow>
         )}
-        {selected && <><AdvancedMarker position={selected} /><InfoWindow disableAutoPan={false} position={selected} ><p>YOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO</p></InfoWindow></>}
+        {selected && (
+          <>
+            <AdvancedMarker position={selected}>
+              <Pin />
+            </AdvancedMarker>
+            <InfoWindow disableAutoPan={false} position={selected} ><p className="disable-opacity">test</p></InfoWindow>
+          </>
+        )
+        }
       </Map>
     </APIProvider>
   );

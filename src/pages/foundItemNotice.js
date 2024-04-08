@@ -32,7 +32,7 @@ function FoundItemNotice() {
     formData.append('photo', values.photo); // Append photo to form data
 
     try {
-      await axios.post('http://localhost:5000/founditems', formData, {
+      await axios.post('http://localhost:5000/ApplicationService', formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }
