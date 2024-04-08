@@ -23,24 +23,14 @@ import "@reach/combobox/styles.css";
 import './GoogleMaps.css';
 
 export default function GoogleMaps() {
+  
   const { isLoaded } = useLoadScript({
     googleMapsApiKey: "AIzaSyB5yzIMiOUagFda-20MnNBruQAGgdsVPfc",
     libraries: ["places"],
   });
 
-  if (!isLoaded) return <div>Loading...</div>;
-  return <GoogleMap />;
-}
+  const [open, setOpen] = useState(true);
 
-const SINGAPORE_BOUNDS = {
-  north: 1.21013,
-  south: 103.60567,
-  west: 1.47156,
-  east: 104.04364
-};
-
-function GoogleMap() {
-  const [open, setOpen] = useState(false);
   const defaultPosition = { lat: 1.349, lng: 103.739 }
   // Get places library in google maps api
   const [listOfPins, setListOfPins] = useState([]);
@@ -50,33 +40,22 @@ function GoogleMap() {
 
   // useEffect(() => {
   //   axios.get("http://localhost:5000/locations").then((response) => {
-  //     setListOfPins(response.data);
+  //     setListOfPins(response.data); // will be a list item containing arrays of latlng objects
   //   });
   // });
+
+  if (!isLoaded) return <div>Loading...</div>;
 
   return (
     <APIProvider>
       <PlacesAutocomplete className="Gmaps-Searchbar" setSelected = {setSelected}/>
       <Map defaultZoom={15} defaultCenter={defaultPosition} mapId={"95ff34d67269854f"} className="map-container">
-        <AdvancedMarker position={defaultPosition} onClick={() => setOpen(true)}>
-          <Pin
-            background={"grey"}
-            borderColor={"green"}
-            glyphColor={"purple"}
-          />
-        </AdvancedMarker>
-
-        {open && (
-          <InfoWindow position={defaultPosition} onCloseClick={() => setOpen(false)}>
-            <p>Test</p>
-          </InfoWindow>
-        )}
-        {selected && (
+        {selected && open &&(
           <>
             <AdvancedMarker position={selected}>
               <Pin />
             </AdvancedMarker>
-            <InfoWindow disableAutoPan={false} position={selected} ><p className="disable-opacity">test</p></InfoWindow>
+            <InfoWindow disableAutoPan={false} position={selected} onCloseClick={() => setOpen(false)}><p className="disable-opacity">test</p></InfoWindow>
           </>
         )
         }
