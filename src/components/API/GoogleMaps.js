@@ -1,5 +1,6 @@
 import { useEffect, useState} from "react";
 import {useLoadScript} from "@react-google-maps/api";
+import axios from "axios";
 import {
   APIProvider,
   Map,
@@ -40,17 +41,24 @@ const SINGAPORE_BOUNDS = {
 
 function GoogleMap() {
   const [open, setOpen] = useState(false);
-  const position = { lat: 1.349, lng: 103.739 }
+  const defaultPosition = { lat: 1.349, lng: 103.739 }
   // Get places library in google maps api
+  const [listOfPins, setListOfPins] = useState([]);
 
   // Selected allows us to pass a location and render it as a market on the map
-  const [selected, setSelected] = useState({ lat: 1.349, lng: 103.739 });
+  const [selected, setSelected] = useState();
+
+  // useEffect(() => {
+  //   axios.get("http://localhost:5000/locations").then((response) => {
+  //     setListOfPins(response.data);
+  //   });
+  // });
 
   return (
     <APIProvider>
       <PlacesAutocomplete className="Gmaps-Searchbar" setSelected = {setSelected}/>
-      <Map defaultZoom={15} defaultCenter={selected} mapId={"95ff34d67269854f"} className="map-container">
-        <AdvancedMarker position={position} onClick={() => setOpen(true)}>
+      <Map defaultZoom={15} defaultCenter={defaultPosition} mapId={"95ff34d67269854f"} className="map-container">
+        <AdvancedMarker position={defaultPosition} onClick={() => setOpen(true)}>
           <Pin
             background={"grey"}
             borderColor={"green"}
@@ -59,7 +67,7 @@ function GoogleMap() {
         </AdvancedMarker>
 
         {open && (
-          <InfoWindow position={position} onCloseClick={() => setOpen(false)}>
+          <InfoWindow position={defaultPosition} onCloseClick={() => setOpen(false)}>
             <p>Test</p>
           </InfoWindow>
         )}

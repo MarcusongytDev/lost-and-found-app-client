@@ -10,6 +10,7 @@
 .accordion-item-settings{
     border-width: 2px;
     border-style: solid;
+    z-index: 0;
 }
 .header-text-settings{
     text-align: center;

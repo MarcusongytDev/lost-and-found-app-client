@@ -56,7 +56,7 @@ function Settings(){
                 </Row>
                 <hr className="solid"/>
             </Container>    
-            <Accordion className="col-sm-9 mx-auto" style={{paddingBottom: "20px"}}>
+            <Accordion className="col-sm-9 mx-auto" style={{paddingBottom: "40px"}}>
                 <Accordion.Item eventKey="0" className="accordion-item-settings">
                     <Accordion.Header>What do i do if i lost an item?</Accordion.Header>
                     <Accordion.Body>
@@ -66,25 +66,13 @@ function Settings(){
                 <Accordion.Item eventKey="1" className="accordion-item-settings">
                     <Accordion.Header>What do i do if i found an item?</Accordion.Header>
                     <Accordion.Body>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                    minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                    aliquip ex ea commodo consequat. Duis aute irure dolor in
-                    reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                    culpa qui officia deserunt mollit anim id est laborum.
+                        Please proceed to the dropdown button and click "Found An Item", and proceed to fill in the form.
                     </Accordion.Body>
                 </Accordion.Item>
                 <Accordion.Item eventKey="2" className="accordion-item-settings">
                     <Accordion.Header>How do i contact the person who found my item?</Accordion.Header>
                     <Accordion.Body>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                    minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                    aliquip ex ea commodo consequat. Duis aute irure dolor in
-                    reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                    culpa qui officia deserunt mollit anim id est laborum.
+                        There will be a contact finder button in the Item Notice that will allow you to send a message to the person that found your item.
                     </Accordion.Body>
                 </Accordion.Item>
             </Accordion>
