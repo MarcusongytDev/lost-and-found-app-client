@@ -58,16 +58,16 @@ function LostItemCatalog() {
       {/* Item Catalog */}
       <Container fluid className="LIC-Catalog" style={{paddingTop: "20px"}}>
         <Row>
-          <Col xs={4} className="LIC-Flexbox">
+          <Col xs={4} className="LIC-Flexbox" onClick={() => navigate("/LostItemDescription/:id")}>
             <LIC_Card/>
           </Col>
-          <Col xs={4} className="LIC-Flexbox">
+          <Col xs={4} className="LIC-Flexbox" onClick={() => navigate("/LostItemDescription/:id")}>
             <LIC_Card/>
           </Col>
-          <Col xs={4} className="LIC-Flexbox">
+          <Col xs={4} className="LIC-Flexbox" onClick={() => navigate("/LostItemDescription/:id")}>
             <LIC_Card/>
           </Col>
-          <Col xs={4} className="LIC-Flexbox">
+          <Col xs={4} className="LIC-Flexbox" onClick={() => navigate("/LostItemDescription/:id")}>
             <LIC_Card/>
           </Col>
         </Row>
