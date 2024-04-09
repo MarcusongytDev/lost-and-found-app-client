@@ -51,7 +51,8 @@ export default LostItemDescription;
 
 function LostItemDescription() {
     const { id } = useParams();
-    const [postObject, setPostObject] = useState({})
+    const [postObject, setPostObject] = useState({});
+    const [displayLocation, setDisplayLocation] = useState();
     // Example product details
     // In a real application, you would fetch these details from an API or a Redux store
     const product = {
@@ -66,11 +67,22 @@ function LostItemDescription() {
         imageUrl: "https://via.placeholder.com/150"
     };
 
-    // useEffect(() => {
-    //   axios.get("http://localhost:5000/postObject").then((response) => {
-    //     setPostObject(response);
-    //   });
-    // }, []);
+    useEffect(() => {
+      axios.get("http://localhost:5000/get-lost-items").then((response) => {
+        setPostObject(response.data["allLostItems"][id]);
+        console.log(response.data["allLostItems"][id]);
+        const LAT = response.data["allLostItems"][id]["location"]["lat"];
+        const LNG = response.data["allLostItems"][id]["location"]["lng"];
+        const KEY = "AIzaSyB5yzIMiOUagFda-20MnNBruQAGgdsVPfc";
+        const url =`https://maps.googleapis.com/maps/api/geocode/json?latlng=${LAT},${LNG}&key=${KEY}`;
+        fetch(url).then((res) => {
+          return res.json();
+        }).then((data) => {
+          setDisplayLocation(data["results"][1]["formatted_address"]);
+        }).catch((e) => {console.log("no formatted address available")})
+      });
+    }, []);
+
 
     return (
         <div className="product-detail-page">
@@ -82,13 +94,13 @@ function LostItemDescription() {
                     <img src={product.imageUrl} alt={product.name} className="product-image" />
                 </div>
                 <div className="product-info">
-                    <p><strong>Name:</strong> {product.name}</p>
-                    <p><strong>Location:</strong> {product.location}</p>
-                    <p><strong>Date Found: </strong></p>
-                    <p><strong>Email:</strong> {product.email}</p>
-                    <p><strong>Phone Number:</strong> {product.phoneNumber}</p>
-                    <p><strong>Item Filter:</strong> {product.itemFilter}</p>
-                    <p><strong>Description:</strong> {product.description}</p>
+                    <p><strong>Name:</strong> {postObject.name}</p>
+                    <p><strong>Location:</strong> {displayLocation}</p>
+                    <p><strong>Date & Time Found: </strong>{postObject.dateTimeFound}</p>
+                    <p><strong>Email:</strong> {postObject.email}</p>
+                    <p><strong>Phone Number:</strong> {postObject.phoneNumber}</p>
+                    <p><strong>Item Filter:</strong> {postObject.itemFilters}</p>
+                    <p><strong>Description:</strong> {postObject.description}</p>
                 </div>
             </div>
         </div>

@@ -34,6 +34,12 @@ export default function GoogleMaps() {
   const defaultPosition = { lat: 1.349, lng: 103.739 }
   // Get places library in google maps api
   const [listOfPins, setListOfPins] = useState([]);
+    useEffect(() => {
+      axios.get("http://localhost:5000/get-lost-items").then((response) => {
+        setListOfPins(response.data["allLostItems"]);
+        console.log(listOfPins);
+      });
+    }, []);
 
   // Selected allows us to pass a location and render it as a market on the map
   const [selected, setSelected] = useState();

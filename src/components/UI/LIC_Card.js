@@ -10,8 +10,13 @@ import {useEffect, useState} from "react";
 import axios from "axios";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './LIC_Card.css';
+import usePlacesAutoComplete, {
+    getGeocode,
+    getLatLng,
+  } from "use-places-autocomplete";
+import { responsivePropType } from "react-bootstrap/esm/createUtilityClasses";
 
-function LIC_Card(){
+export default function LIC_Card(props){
     let navigate = useNavigate();
     const routeChange = () =>{
       let path = "";
@@ -19,6 +24,7 @@ function LIC_Card(){
     }
 
     const [postObject, setPostObject] = useState({});
+    const [locationObject, setlocationObject] = useState();
 
     // useEffect(() =>{
     //     axios.get('http://localhost:5000/posts/:id').then((response)=>{
@@ -29,21 +35,33 @@ function LIC_Card(){
     // postObject.itemTags
     // postObject.ItemDescription
     // postObject.LocationFound
+    const KEY = "AIzaSyB5yzIMiOUagFda-20MnNBruQAGgdsVPfc";
+    const LAT = String(props.locationFound["lat"]);
+    const LNG = String(props.locationFound["lng"]);
+    const url =`https://maps.googleapis.com/maps/api/geocode/json?latlng=${LAT},${LNG}&key=${KEY}`;
+
+    useEffect(() => {
+        fetch(url).then((res) => {
+            return res.json();
+        }).then((data) => {
+            setlocationObject(data["results"][1]["formatted_address"]);
+        }).catch((e) => {console.log("no formatted address available")})
+    },[]);
 
     return(
         <Card style={{ width: '400px'}} onClick={routeChange} className="LIC-Card-Hover">
             <Card.Img variant="top" src={tempImage} className="LIC-Card-Image" />
             <Card.Body>
-                <Card.Title style={{fontWeight: "bold"}}>Item Tags</Card.Title>
+                <Card.Title style={{fontWeight: "bold"}}>{props.name}</Card.Title>
                 <Card.Text>
-                Item Description Sample Text
+                    <p>{props.tags}</p>
                 </Card.Text>
             </Card.Body>
             <ListGroup variant="flush" style={{fontStyle: "italic"}}>
-                <ListGroup.Item>Location Found: Test</ListGroup.Item>
+                <ListGroup.Item>
+                    Location : {locationObject}
+                </ListGroup.Item>
             </ListGroup>
         </Card>
     );
 }
-
-export default LIC_Card;

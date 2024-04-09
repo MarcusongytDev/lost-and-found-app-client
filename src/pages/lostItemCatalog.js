@@ -32,12 +32,13 @@ function LostItemCatalog() {
     }
     // Gets all the posts in database, use .map to create that number of posts in the row.
 
-    // const [listOfPosts, setListOfPosts] = useState([]);
-    // useEffect(() => {
-    //   axios.get("http://localhost:5000/posts").then((response) => {
-    //     setListOfPosts(response.data);
-    //   });
-    // }, [])
+    const [listOfPosts, setListOfPosts] = useState([]);
+    useEffect(() => {
+      axios.get("http://localhost:5000/get-lost-items").then((response) => {
+        setListOfPosts(response.data["allLostItems"]);
+        console.log(response.data["allLostItems"]);
+      });
+    }, []);
 
 
   return (
@@ -57,7 +58,16 @@ function LostItemCatalog() {
       {/* Item Catalog */}
       <Container fluid className="LIC-Catalog" style={{paddingTop: "20px"}}>
         <Row>
-          <Col xs={4} className="LIC-Flexbox" onClick={() => navigate("/LostItemDescription/:id")}>
+          {listOfPosts.map((value, key) => {
+            return (
+              <Col xs={4} className="LIC-Flexbox" onClick={() => navigate(`/LostItemDescription/${key}`)}>
+                <LIC_Card name={value.name} tags={value.itemFilters} locationFound={value.location}/>
+              </Col>
+            );
+            })
+          }
+          
+          {/* <Col xs={4} className="LIC-Flexbox" onClick={() => navigate("/LostItemDescription/:id")}>
             <LIC_Card/>
           </Col>
           <Col xs={4} className="LIC-Flexbox" onClick={() => navigate("/LostItemDescription/:id")}>
@@ -65,10 +75,7 @@ function LostItemCatalog() {
           </Col>
           <Col xs={4} className="LIC-Flexbox" onClick={() => navigate("/LostItemDescription/:id")}>
             <LIC_Card/>
-          </Col>
-          <Col xs={4} className="LIC-Flexbox" onClick={() => navigate("/LostItemDescription/:id")}>
-            <LIC_Card/>
-          </Col>
+          </Col> */}
 
         </Row>
       </Container>
