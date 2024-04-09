@@ -47,8 +47,9 @@
   .gmaps-template-container {
     display: flex;
     justify-content: center;
+    text-align: center;
     position: fixed;
-    bottom: 1px;
+    bottom: 40px;
     width: 100%;
     z-index: 1;
 }
@@ -58,9 +59,22 @@
     background-color: rgb(57, 56, 56);
     color: white;
     border-radius: 20px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .gmaps-template-link{
     color: white;
     padding: 30px;
+    font-size:20px;
+    font-family: Arial, sans-serif;
+    text-decoration: none !important;
 }
+
+.gmaps-template-catalog:hover .gmaps-template-link, 
+.gmaps-template-cantfind:hover .gmaps-template-link {
+    color: lightskyblue /* Change text color to blue on hover */
+}
+
