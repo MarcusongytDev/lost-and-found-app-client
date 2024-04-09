@@ -1,6 +1,9 @@
   import { useEffect, useState} from "react";
   import {useLoadScript} from "@react-google-maps/api";
+  import {useNavigate} from "react-router-dom";
   import axios from "axios";
+  import Card from 'react-bootstrap/Card';
+  import ListGroup from 'react-bootstrap/ListGroup';
   import {
     APIProvider,
     Map,
@@ -21,6 +24,7 @@
   } from "@reach/combobox";
   import "@reach/combobox/styles.css";
   import './GoogleMaps.css';
+  
 
   export default function GoogleMaps() {
     
@@ -29,85 +33,89 @@
       libraries: ["places"],
     });
 
-    const [open, setOpen] = useState(false);
+    const [open, setOpen] = useState(true);
+    const navigate = useNavigate();
 
     const defaultPosition = { lat: 1.349, lng: 103.739 }
-    // Get places library in google maps api
-    const [listOfPins, setListOfPins] = useState([]);
-    useEffect(() => {
-      axios.get("http://localhost:5000/get-lost-items").then((response) => {
-        setListOfPins(response.data["allLostItems"]);
-        console.log(listOfPins);
-      });
-    }, []);
 
     // Selected allows us to pass a location and render it as a market on the map
     const [selected, setSelected] = useState();
 
-    const[currentLocation, setCurrentLocation] = useState(null);
+    const [listOfLocations, setListOfLocations] = useState([]);
 
-    // useEffect(() => {
-    //   axios.get("http://localhost:5000/locations").then((response) => {
-    //     setListOfPins(response.data); // will be a list item containing arrays of latlng objects
-    //   });
-    // });
+
     useEffect(() => {
-      // Fetch locations from backend
-      axios.get("http://localhost:5000/locations").then((response) => {
-          setListOfPins(response.data);
-      }).catch(error => {
-          console.error('Error fetching locations:', error);
+      axios.get("http://localhost:5000/get-lost-items").then((response) => {
+        setListOfLocations(response.data["allLostItems"]);
+        console.log(response.data["allLostItems"]);
       });
+    }, []);
+    
+    const KEY = "AIzaSyB5yzIMiOUagFda-20MnNBruQAGgdsVPfc";
 
-      // Get user's current location
-      if (navigator.geolocation) {
-          navigator.geolocation.getCurrentPosition((position) => {
-              const { latitude, longitude } = position.coords;
-              setCurrentLocation({ lat: latitude, lng: longitude });
-          },
-              (error) => {
-                  console.error("Error getting current location:", error);
-              }
-          );
-      } else {
-          console.error("Geolocation is not supported by this browser.");
-      }
-  }, []);
+    const [selectedKey, setSelectedKey] = useState(false);
+
+      // Get user's current locations
 
     if (!isLoaded) return <div>Loading...</div>;
 
     return (
       <APIProvider>
         <PlacesAutocomplete className="Gmaps-Searchbar" setSelected = {setSelected}/>
-        <Map defaultZoom={15} defaultCenter={currentLocation || defaultPosition} mapId={"95ff34d67269854f"} className="map-container">
-          {/* Render pins from the backend */}
-          {listOfPins.map((pin, index) => (
-                      <AdvancedMarker key={index} position={pin} onClick={() => {
-                          setSelected(pin);
-                          setOpen(true);
-                      }}>
-                          <Pin /> 
-                      </AdvancedMarker>
-                  ))}
-                  {/* Render the current location marker */}
-        {currentLocation && (
-          <>
-            {/* Display the "Your Location" label */}
-            <AdvancedMarker position={currentLocation}>
-              <InfoWindow position={{ lat: currentLocation.lat + 0.0005, lng: currentLocation.lng }}>
-                <div style={{ fontSize: '14px', fontWeight: 'bold' }}>Your Location</div>
-              </InfoWindow>
-              <Pin />
-            </AdvancedMarker>
-          </>
-        )}
+        <Map defaultZoom={15} defaultCenter={defaultPosition} mapId={"95ff34d67269854f"} className="map-container">
+        {listOfLocations.map((value, key) => {
+          console.log(value["location"][1])
+          const LAT = Number(value["location"][1]);
+          const LNG = Number(value["location"][2]);
+          const setPosition = {lat: LAT, lng: LNG};
+          
+          // fetch(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${String(LAT)},${String(LNG)}&key=${KEY}`).then((res) =>{
+          //   return res.json();
+          // }).then((data) => {
+          //   setLocationObject = data["results"][1]["formatted_address"]
+          // }).catch((e) => {console.log("no formatted address available")});
+
+
+          if(LAT != undefined){
+            return(
+              <>
+                <AdvancedMarker position={setPosition} onClick={() => {setSelectedKey(key+1)}}>
+                  <Pin background={'#FBBC04'} glyphColor={'#000'} borderColor={'#000'}/>
+                  {selectedKey==(key+1) && (
+                  <InfoWindow position={setPosition} onCloseClick={() => {setSelectedKey(false)}}>
+                    <Card style={{ width: '400px'}} onClick={() => {navigate(`/LostItemDescription/${key}`)}} className="LIC-Card-Hover">
+                    <Card.Img variant="top" src={value["ImageURL"]} className="LIC-Card-Image" />
+                    <Card.Body>
+                        <Card.Title style={{fontWeight: "bold"}}>{value["name"]}</Card.Title>
+                        <Card.Text>
+                            <p>{value["itemFilters"]}</p>
+                        </Card.Text>
+                    </Card.Body>
+                    <ListGroup variant="flush" style={{fontStyle: "italic"}}>
+                        <ListGroup.Item>
+                          {/* <strong>Location :</strong>{locationObject} */}
+                        </ListGroup.Item>
+                    </ListGroup>
+                    </Card>
+                  </InfoWindow>
+                  )
+                }
+                </AdvancedMarker>
+              </>
+            );
+          }
+          else{
+            console.log("No Location Inputted");
+          }
+          })
+        }
         {selected && open && (
           <>
             <AdvancedMarker position={selected}>
               <Pin />
             </AdvancedMarker>
             <InfoWindow disableAutoPan={false} position={selected} onCloseClick={() => setOpen(false)}>
-              <p className="disable-opacity">test</p>
+              <p className="disable-opacity"><strong>Selected Location</strong></p>
             </InfoWindow>
           </>
         )}

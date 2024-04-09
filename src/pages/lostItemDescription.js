@@ -91,7 +91,7 @@ function LostItemDescription() {
             </header>
             <div className="product-detail-container">
                 <div className="product-image-container">
-                    <img src={product.imageUrl} alt={product.name} className="product-image" />
+                    <img src={postObject.ImageURL} alt={product.name} className="product-image" />
                 </div>
                 <div className="product-info">
                     <p><strong>Name:</strong> {postObject.name}</p>

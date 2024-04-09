@@ -61,7 +61,7 @@ function LostItemCatalog() {
           {listOfPosts.map((value, key) => {
             return (
               <Col xs={4} className="LIC-Flexbox" onClick={() => navigate(`/LostItemDescription/${key}`)}>
-                <LIC_Card name={value.name} tags={value.itemFilters} locationFound={value.location}/>
+                <LIC_Card name={value.name} tags={value.itemFilters} locationFound={value.location} ImageURL={value.ImageURL}/>
               </Col>
             );
             })

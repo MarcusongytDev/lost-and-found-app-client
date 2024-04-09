@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import {useNavigate} from "react-router-dom"
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { WithContext as ReactTags } from 'react-tag-input';
 import * as Yup from 'yup';
@@ -15,6 +16,7 @@ function FoundItemNotice() {
     const [email, setEmail] = useState(''); // State for email field
     const [phone, setPhone] = useState(''); // State for phone number field
     const [tags, setTags] = useState([]); // Initialize tags state for itemFilter tags
+    const navigate = useNavigate();
 
     const initialValues = {
         name: '',
@@ -44,7 +46,7 @@ function FoundItemNotice() {
             // Update the selected location directly on form submission
             // setSelectedLocation({ latitude: 123, longitude: 456 }); // Replace with the actual selected location
             // Assuming you have a function to get the selected location from the map component
-            await axios.post('http://localhost:5000/founditems', {
+            await axios.post('http://localhost:5000/post-lost-item', {
                 ...values,
                 location: selectedLocation, // Add selected location to form data
                 name: name // Add name to form data
@@ -52,6 +54,7 @@ function FoundItemNotice() {
         } catch (error) {
             console.error('There was an error submitting the form:', error);
         }
+        navigate("/home");
     };
 
     const handleDelete = (i) => {
