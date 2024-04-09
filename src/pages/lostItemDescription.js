@@ -15,40 +15,6 @@ import LIC_Card from "../components/UI/LIC_Card";
 import tempImage from "../assets/questionmark-icon.png";
 
 
-/*
-function LostItemDescription() {
-    // let {id} = useParams()
-    // const [postObject, setPostObject] = useState([]); // [] since API req returns a list setListOfPosts is a function to change the lists of posts
-    // useEffect(() => {
-    //     axios.get(`http://localhost:5000/posts/byID/${id}`).then((response) => {
-    //         setPostObject(response.data);
-    //     })
-    // });
-    let navigate = useNavigate();
-    const routeChange = () =>{
-      let path = "";
-      navigate(path);
-    }
-
-    return (
-        <>
-          <Container fluid style={{textAlign: "center", paddingTop: "10px"}}>
-            <h1>Lost Items Reported</h1>
-          </Container>
-          <Container fluid className="LIC-Catalog" style={{paddingTop: "20px"}}>
-            <Row>
-              <Col xs={4} className="LIC-Flexbox">
-                <LIC_Card/>
-              </Col>
-            </Row>
-          </Container>
-        </>
-      );
-}
-
-export default LostItemDescription;
-*/
-
 function LostItemDescription() {
     const { id } = useParams();
     const [postObject, setPostObject] = useState({});
