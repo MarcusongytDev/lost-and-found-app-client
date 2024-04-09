@@ -38,6 +38,7 @@ function FoundItemNotice() {
         phone: Yup.string().matches(/^[0-9]+$/, 'Must be a valid phone number').required('Phone number is required'),
         photo: Yup.mixed().required('Photo of item is required')
     });
+    const navigate = useNavigate();
 
     const onSubmit = async (values) => {
         console.log("here below");
