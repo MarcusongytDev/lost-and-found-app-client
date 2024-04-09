@@ -15,6 +15,7 @@ function FoundItemNotice() {
     const [email, setEmail] = useState(''); // State for email field
     const [phone, setPhone] = useState(''); // State for phone number field
     const [tags, setTags] = useState([]); // Initialize tags state for itemFilter tags
+    const [photo, setPhoto] = useState();
 
     const initialValues = {
         name: '',
@@ -38,17 +39,25 @@ function FoundItemNotice() {
     });
 
     const onSubmit = async (values) => {
+        console.log("here below");
         console.log(selectedLocation);
+        const data = new FormData();
+        data.append("name", name);
+        data.append("dateFound", dateFound);
+        data.append("timeFound", timeFound);
+        data.append("description", description);
+        data.append("email", email);
+        data.append("phone", phone);
+        data.append("itemFilter", values.itemFilter);
+        data.append("location", JSON.stringify(selectedLocation));
+        data.append("photo", photo);
+        axios.post('https://httpbin.org/anything', data).then(res => console.log(res));
         // Submit form data
         try {
             // Update the selected location directly on form submission
             // setSelectedLocation({ latitude: 123, longitude: 456 }); // Replace with the actual selected location
             // Assuming you have a function to get the selected location from the map component
-            await axios.post('http://localhost:5000/founditems', {
-                ...values,
-                location: selectedLocation, // Add selected location to form data
-                name: name // Add name to form data
-            });
+            await axios.post('http://localhost:5000/post-lost-item', data).then(res => console.log(res));
         } catch (error) {
             console.error('There was an error submitting the form:', error);
         }
@@ -82,7 +91,14 @@ function FoundItemNotice() {
                         <Form>
                             <div className="form-group">
                                 <label htmlFor="name">Name</label>
-                                <Field id="name" name="name" type="text" className="form-control LIN-formControl" />
+                                <Field 
+                                  id="name" 
+                                  name="name" 
+                                  type="text" 
+                                  className="form-control LIN-formControl" 
+                                  value={name}
+                                  onChange={(e) => {setName(e.target.value); setFieldValue('name', e.target.value)}}
+                                />
                                 <ErrorMessage name="name" component="div" className="LIN-errorMessage" />
                             </div>
                             <GoogleMaps setlocation={setlocation} /> {/* Render the GoogleMaps component */}
@@ -115,19 +131,40 @@ function FoundItemNotice() {
 
                             <div className="form-group">
                                 <label htmlFor="description">Description</label>
-                                <Field id="description" name="description" type="text" className="form-control LIN-formControl" />
+                                <Field 
+                                  id="description" 
+                                  name="description" 
+                                  type="text" 
+                                  className="form-control LIN-formControl" 
+                                  value={description}
+                                  onChange={(e) => {setDescription(e.target.value); setFieldValue('description', e.target.value)}}
+                                />
                                 <ErrorMessage name="description" component="div" className="LIN-errorMessage" />
                             </div>
 
                             <div className="form-group">
                                 <label htmlFor="email">Email</label>
-                                <Field id="email" name="email" type="email" className="form-control LIN-formControl" />
+                                <Field 
+                                  id="email" 
+                                  name="email" 
+                                  type="text" 
+                                  className="form-control LIN-formControl" 
+                                  value={email}
+                                  onChange={(e) => {setEmail(e.target.value); setFieldValue('email', e.target.value)}}
+                                />
                                 <ErrorMessage name="email" component="div" className="LIN-errorMessage" />
                             </div>
 
                             <div className="form-group">
                                 <label htmlFor="phone">Phone Number</label>
-                                <Field id="phone" name="phone" type="tel" className="form-control LIN-formControl" />
+                                <Field 
+                                  id="phone" 
+                                  name="phone" 
+                                  type="text" 
+                                  className="form-control LIN-formControl" 
+                                  value={phone}
+                                  onChange={(e) => {setPhone(e.target.value); setFieldValue('phone', e.target.value)}}
+                                />
                                 <ErrorMessage name="phone" component="div" className="LIN-errorMessage" />
                             </div>
 
@@ -161,7 +198,9 @@ function FoundItemNotice() {
                                     name="photo"
                                     type="file"
                                     onChange={(event) => {
-                                        setFieldValue('photo', event.currentTarget.files[0]); // Update form values on file selection
+                                        const eventFile = event.target.files[0];
+                                        setFieldValue('photo', event.currentTarget.files[0]); // clear validation schema
+                                        setPhoto(eventFile); // Set photo to event file                            
                                     }}
                                     className="form-control LIN-formControl"
                                 />
