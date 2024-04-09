@@ -40,7 +40,7 @@ function FoundItemNotice() {
 
     const onSubmit = async (values) => {
         console.log("here below");
-        console.log(selectedLocation);
+        console.log(values.itemFilter);
         const data = new FormData();
         data.append("name", name);
         data.append("dateFound", dateFound);
@@ -49,14 +49,22 @@ function FoundItemNotice() {
         data.append("email", email);
         data.append("phone", phone);
         data.append("itemFilter", values.itemFilter);
-        data.append("location", JSON.stringify(selectedLocation));
+        //parse location as an object of lat and long
+        data.append("location", {});
+        for (var key in selectedLocation) {
+            data.append("location", selectedLocation[key]);
+        }
+        console.log(data.get("location"));
+
         data.append("photo", photo);
-        axios.post('https://httpbin.org/anything', data).then(res => console.log(res));
+
         // Submit form data
         try {
             // Update the selected location directly on form submission
             // setSelectedLocation({ latitude: 123, longitude: 456 }); // Replace with the actual selected location
             // Assuming you have a function to get the selected location from the map component
+
+            await axios.post('https://httpbin.org/anything', data).then(res => console.log(res));
             await axios.post('http://localhost:5000/post-lost-item', data).then(res => console.log(res));
         } catch (error) {
             console.error('There was an error submitting the form:', error);
