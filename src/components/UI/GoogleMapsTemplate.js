@@ -1,5 +1,6 @@
 import './GoogleMapsTemplate.css';
 import navbaricon from '../../assets/navbar-dropdown-icon.png';
+import { useNavigate } from 'react-router-dom';
 
 export default function GoogleMapsTemplate(){
 
