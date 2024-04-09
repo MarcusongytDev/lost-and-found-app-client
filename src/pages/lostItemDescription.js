@@ -37,8 +37,8 @@ function LostItemDescription() {
       axios.get("http://localhost:5000/get-lost-items").then((response) => {
         setPostObject(response.data["allLostItems"][id]);
         console.log(response.data["allLostItems"][id]);
-        const LAT = response.data["allLostItems"][id]["location"]["lat"];
-        const LNG = response.data["allLostItems"][id]["location"]["lng"];
+        const LAT = String(response.data["allLostItems"][id]["location"][1]);
+        const LNG = String(response.data["allLostItems"][id]["location"][2]);
         const KEY = "AIzaSyB5yzIMiOUagFda-20MnNBruQAGgdsVPfc";
         const url =`https://maps.googleapis.com/maps/api/geocode/json?latlng=${LAT},${LNG}&key=${KEY}`;
         fetch(url).then((res) => {
