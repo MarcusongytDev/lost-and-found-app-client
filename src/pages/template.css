@@ -52,3 +52,9 @@ body.backgroundsettings{
     background-position-y: top;
     background-attachment: fixed;
 }
+/* In your template.css file */
+@media (min-width: 992px) { /* Adjust this breakpoint as needed */
+    .navbar-expand-lg .navbar-toggler { 
+      display: none; 
+    }
+}
