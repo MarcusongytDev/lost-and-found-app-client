@@ -15,19 +15,18 @@ function Template(){
         // Navigation Bar
         <>
             <body className="template-background"></body>
-            <Navbar expand="lg" className="justify-content-center navbar-dark navbar-custom">
+            <Navbar expand="lg" className="navbar-dark navbar-custom">
                 <Container fluid>
-                <Navbar.Brand className="navbar-title-custom" href="/home">Foraged</Navbar.Brand>
-                <Navbar.Brand className="navbar-custom" href="/home"></Navbar.Brand>
+                <Navbar.Brand className="navbar-custom" href="/home">Foraged</Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />  
-                <Navbar.Collapse id="responsive-navbar-nav">
-                    <Nav className="me-auto">
-                        <NavDropdown.Item href="/home">Home</NavDropdown.Item>
-                        <NavDropdown.Item href="/settings">Settings</NavDropdown.Item>
-                        <NavDropdown.Item href="/lostItemNotice">Lost Item Notice</NavDropdown.Item>
-                        <NavDropdown.Item href="/lostItemCatalog">Lost Item Catalog</NavDropdown.Item>
-                        <NavDropdown.Item href="/foundItemNotice">Found Item Notice</NavDropdown.Item>
-                        <NavDropdown.Item href="/contactFinder">Contact Finder</NavDropdown.Item>
+                <Navbar.Collapse id="responsive-navbar-nav" className="navbar-collapse">
+                    <Nav className="ms-auto">
+                        <NavDropdown.Item href="/home" className="nav-item-spacing">Home</NavDropdown.Item>
+                        <NavDropdown.Item href="/settings" className="nav-item-spacing">Settings</NavDropdown.Item>
+                        <NavDropdown.Item href="/lostItemNotice" className="nav-item-spacing">Post Lost Item</NavDropdown.Item>
+                        <NavDropdown.Item href="/lostItemCatalog" className="nav-item-spacing">Catalog</NavDropdown.Item>
+                        <NavDropdown.Item href="/foundItemNotice" className="nav-item-spacing">Found an Item?</NavDropdown.Item>
+                        <NavDropdown.Item href="/contactFinder" className="nav-item-spacing">Contact Finder</NavDropdown.Item>
                         <NavDropdown.Divider />
                     </Nav>
                 </Navbar.Collapse>
