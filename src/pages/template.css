@@ -1,8 +1,20 @@
 
-.navbar-custom{
-    background-color: #213555;
-    color: white;
+/* Default styles for the navbar, you can place common styles here */
+.navbar-custom {
+    color: white; /* default text color */
+  }
+  
+/* Light mode specific styles */
+.light-mode-theme .navbar-custom {
+background-color: #093125; /* Dark green background */
 }
+  
+/* Dark mode specific styles */
+.dark-mode-theme .navbar-custom {
+background-color: #1b483b; /* Light green background */
+color: #000000; /* Dark green text color */
+}
+  
 .template-footer{
     position: fixed;
     bottom: 0px;
@@ -24,7 +36,7 @@
     background-size: cover;
 }
 body.dark-mode-theme{
-    background-color: black;
+    background-color: rgb(18, 42, 34);
     color: white;
   }
 body.light-mode-theme{
@@ -40,10 +52,3 @@ body.backgroundsettings{
     background-position-y: top;
     background-attachment: fixed;
 }
-/* In your template.css file */
-@media (min-width: 992px) { /* Adjust this breakpoint as needed */
-    .navbar-expand-lg .navbar-toggler { 
-      display: none; 
-    }
-  }
-  
