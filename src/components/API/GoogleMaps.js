@@ -43,8 +43,6 @@
 
     const [listOfLocations, setListOfLocations] = useState([]);
 
-    const [pos, setPos] = useState();
-
 
     useEffect(() => {
       axios.get("http://localhost:5000/get-lost-items").then((response) => {
@@ -73,15 +71,6 @@
 
 
           if(LAT != (undefined||null)){
-            // fetch(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${String(LAT)},${String(LNG)}&key=${KEY}`).then((res) => {
-            //   return res.json()
-            // }).then((data) => {
-            //   setPos(data["results"][1]["formatted_address"]);
-            // }).catch((e) => {
-            //   console.log("No formatted address");
-            // });
-
-            
 
             return(
               <>
@@ -89,19 +78,19 @@
                   <Pin background={'#FBBC04'} glyphColor={'#000'} borderColor={'#000'}/>
                   {selectedKey==(key+1) && (
                   <InfoWindow position={setPosition} onCloseClick={() => {setSelectedKey(false)}}>
-                    <Card style={{ width: '400px'}} onClick={() => {navigate(`/LostItemDescription/${key}`)}} className="LIC-Card-Hover">
-                    <Card.Img variant="top" src={value["ImageURL"]} className="LIC-Card-Image" />
-                    <Card.Body>
-                        <Card.Title style={{fontWeight: "bold"}}>{value["name"]}</Card.Title>
-                        <Card.Text>
-                            <p>{value["itemFilters"]}</p>
-                        </Card.Text>
-                    </Card.Body>
-                    <ListGroup variant="flush" style={{fontStyle: "italic"}} >
-                        <ListGroup.Item>
-                          {/* <strong>Location :</strong>{pos} */}
-                        </ListGroup.Item>
-                    </ListGroup>
+                    <Card style={{ width: '200px' }} onClick={() => {navigate(`/LostItemDescription/${key}`)}} className="LIC-Card-Hover GoogleMaps-Card">
+                      <Card.Img variant="top" src={value["ImageURL"]} className="LIC-Card-Image" />
+                      <Card.Body>
+                          <Card.Title style={{fontWeight: "bold"}}>{value["name"]}</Card.Title>
+                          <Card.Text>
+                              {/* <li>{value["itemFilters"]}</li> */}
+                          </Card.Text>
+                      </Card.Body>
+                      {/* <ListGroup variant="flush" style={{fontStyle: "italic"}} >
+                          <ListGroup.Item>
+                            <strong>Location :</strong>{pos}
+                          </ListGroup.Item>
+                      </ListGroup> */}
                     </Card>
                   </InfoWindow>
                   )
