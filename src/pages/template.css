@@ -1,9 +1,29 @@
+@font-face {
+  font-family: 'Amazonic';
+  src: url(../fonts/AmazonicPersonalUseBold-eZKGn.ttf) format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Amazonic';
+  src: url(../fonts/AmazonicPersonalUseBold-eZKGn.ttf) format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
 
 /* Default styles for the navbar, you can place common styles here */
 .navbar-custom {
     color: rgb(255, 255, 255); /* default text color */
+    /*font-family: 'Amazonic';*/
   }
-  
+
+.navbar-title-custom {
+    font-family: 'Amazonic'; /* Replace 'YourDesiredFontFamily' with the actual font you want */
+    font-size: 33px; /* Adjust the size as needed */
+    /* Add any other font styling properties you need */
+  }  
+
 /* Light mode specific styles */
 .light-mode-theme .navbar-custom {
 background-color: rgba(0, 0, 0); /* Dark green background */

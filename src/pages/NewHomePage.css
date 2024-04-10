@@ -1,3 +1,9 @@
+@font-face {
+  font-family: 'League';
+  src: url('../fonts/LeagueSpartan-VariableFont_wght.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
 
 .never-lose-again,
 .we-are-committed {
@@ -11,6 +17,7 @@
   width: 676px;
   font-size: 80px;
   letter-spacing: 0.01em;
+  font-family: 'League';
 }
 .we-are-committed {
   width: 632px;
