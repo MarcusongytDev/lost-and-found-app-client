@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import {useNavigate} from "react-router-dom"
 import { Formik, Form, Field, ErrorMessage } from 'formik';
-import { WithContext as ReactTags } from 'react-tag-input';
-import * as Yup from 'yup';
 import './foundItemNotice.css';
+import * as Yup from 'yup';
+import { WithContext as ReactTags } from 'react-tag-input';
 import GoogleMaps from "../components/API/GoogleMapsFinder.js"; // Import the GoogleMaps component
 
 function FoundItemNotice() {
@@ -15,7 +15,6 @@ function FoundItemNotice() {
     const [description, setDescription] = useState(''); // State for description field
     const [email, setEmail] = useState(''); // State for email field
     const [phone, setPhone] = useState(''); // State for phone number field
-    const [tags, setTags] = useState([]); // Initialize tags state for itemFilter tags
     const [photo, setPhoto] = useState();
 
     const initialValues = {
@@ -25,8 +24,7 @@ function FoundItemNotice() {
         description: '',
         email: '',
         phone: '',
-        photo: null,
-        itemFilter: [] // Initialize itemFilter array for tags
+        photo: null
     };
 
     const validationSchema = Yup.object({
@@ -49,9 +47,10 @@ function FoundItemNotice() {
         data.append("description", description);
         data.append("email", email);
         data.append("phone", phone);
-        tags.forEach((tag, index) => {
-            data.append(`itemFilter[${index}]`, tag.text);
-        });
+        // Commenting out the tags
+        // tags.forEach((tag, index) => {
+        //     data.append(`itemFilter[${index}]`, tag.text);
+        // });
         //parse location as an object of lat and long
         data.append("location", {});
         for (var key in selectedLocation) {
@@ -74,8 +73,7 @@ function FoundItemNotice() {
         }
         navigate("/home");
     };
-
-    const handleDelete = (i) => {
+    /*const handleDelete = (i) => {
         setTags(tags.filter((tag, index) => index !== i));
     };
 
@@ -88,7 +86,7 @@ function FoundItemNotice() {
         newTags.splice(currPos, 1);
         newTags.splice(newPos, 0, tag);
         setTags(newTags);
-    };
+    };*/
 
     function setlocation(location){
         setSelectedLocation(location);
@@ -180,7 +178,8 @@ function FoundItemNotice() {
                                 <ErrorMessage name="phone" component="div" className="LIN-errorMessage" />
                             </div>
 
-                            <div className="form-group">
+                            {/* Commenting out the itemFilter section */}
+                            {/* <div className="form-group">
                                 <label>Item Filter (Keyword)</label>
                                 <ReactTags
                                     tags={tags}
@@ -201,7 +200,7 @@ function FoundItemNotice() {
                                     }}
                                     delimiters={[188, 13]}
                                 />
-                            </div>
+                            </div> */}
 
                             <div className="form-group">
                                 <label htmlFor="photo">Photo of Item</label>
