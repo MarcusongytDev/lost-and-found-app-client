@@ -27,9 +27,8 @@ const libraries = ["places"];
 export default function GoogleMaps({setlocation}) {
   const { isLoaded } = useLoadScript({
     googleMapsApiKey: "AIzaSyB5yzIMiOUagFda-20MnNBruQAGgdsVPfc",
-    libraries: libraries, // Pass the libraries array
+    libraries: ["places"], // Pass the libraries array
   });
-
   const [open, setOpen] = useState(true);
   const position = { lat: 1.349, lng: 103.739 }
 
@@ -39,7 +38,9 @@ export default function GoogleMaps({setlocation}) {
 
   return (
     <APIProvider>
-      <PlacesAutocomplete className="Gmaps-Searchbar" setSelected = {setSelected}/>
+      <PlacesAutocomplete className="Gmaps-Searchbar" setSelected = {setSelected} onClick={() => {setlocation(selected)}}/>
+      {setlocation(selected)}
+      {/* <button onClick={() => {setlocation(selected)}}></button> */}
       <Map defaultZoom={15} defaultCenter={position} mapId={"95ff34d67269854f"} className="map-container" onClick={() => setOpen(true)}>
         {selected && (
           <>

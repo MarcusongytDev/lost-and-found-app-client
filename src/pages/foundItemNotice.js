@@ -57,8 +57,8 @@ function FoundItemNotice() {
         for (var key in selectedLocation) {
             data.append("location", selectedLocation[key]);
         }
+        console.log(selectedLocation);
         console.log(data.get("location"));
-
         data.append("photo", photo);
 
         // Submit form data
@@ -112,7 +112,7 @@ function FoundItemNotice() {
                                 />
                                 <ErrorMessage name="name" component="div" className="LIN-errorMessage" />
                             </div>
-                            <GoogleMaps setlocation={setlocation} /> {/* Render the GoogleMaps component */}
+                            <GoogleMaps setlocation={setSelectedLocation} /> {/* Render the GoogleMaps component */}
 
                             <div className="form-group">
                                 <label htmlFor="datefound">Date Found</label>
