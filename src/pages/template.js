@@ -15,23 +15,21 @@ function Template(){
         // Navigation Bar
         <>
             <body className="template-background"></body>
-            <Navbar expand="sm" className="justify-content-center navbar-dark navbar-custom">
-                <Container fluid>
-                <Navbar.Brand className="navbar-custom" href="/home">Lost & Found</Navbar.Brand>
-                <Navbar.Toggle aria-controls="basic-navbar-nav" />  
-                <Navbar.Collapse id="responsive-navbar-nav">
-                    <NavDropdown title="Menu" id="collapsible-nav-dropdown">
-                        <NavDropdown.Item href="/home">Home</NavDropdown.Item>
-                        <NavDropdown.Item href="/lostItemNotice">Lost Item Notice</NavDropdown.Item>
-                        <NavDropdown.Item href="/lostItemCatalog">Lost Item Catalog</NavDropdown.Item>
-                        <NavDropdown.Item href="/foundItemNotice">Found Item Notice</NavDropdown.Item>
-                        <NavDropdown.Item href="/settings">Settings</NavDropdown.Item>
-                        <NavDropdown.Item href="/contactFinder">Contact Finder</NavDropdown.Item>
-                        <NavDropdown.Divider />
-                    </NavDropdown>
-                </Navbar.Collapse>
-                </Container>
-            </Navbar>
+<Navbar expand="lg" className="justify-content-center navbar-dark navbar-custom"> 
+    <Container fluid>
+        <Navbar.Brand className="navbar-custom" href="/home">Lost & Found</Navbar.Brand>
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" /> 
+        <Navbar.Collapse id="responsive-navbar-nav">
+            <Nav className="me-auto"> {/* Add me-auto for left alignment */}
+                <Nav.Link href="/home">Home</Nav.Link>
+                <Nav.Link href="/lostItemNotice">Lost Item Notice</Nav.Link>
+                <Nav.Link href="/lostItemCatalog">Lost Item Catalog</Nav.Link>
+                {/* ...Other Nav.Link items... */}
+            </Nav>
+        </Navbar.Collapse>
+    </Container>
+</Navbar>
+
 
             {/* Footer */}
             <Container className='template-footer'>
