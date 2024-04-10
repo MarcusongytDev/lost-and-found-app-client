@@ -42,7 +42,6 @@ function FoundItemNotice() {
 
     const onSubmit = async (values) => {
         console.log("here below");
-        console.log(values.itemFilter);
         const data = new FormData();
         data.append("name", name);
         data.append("dateFound", dateFound);
@@ -50,7 +49,7 @@ function FoundItemNotice() {
         data.append("description", description);
         data.append("email", email);
         data.append("phone", phone);
-        data.append("itemFilter", values.itemFilter);
+        data.append("itemFilter", tags.map(tag=>tag.text));
         //parse location as an object of lat and long
         data.append("location", {});
         for (var key in selectedLocation) {
