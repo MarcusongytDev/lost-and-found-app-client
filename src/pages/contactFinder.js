@@ -25,15 +25,23 @@ function ContactFinder() {
 
   const onSubmit = data => {
     axios.post('http://localhost:5000/lostitems', data)
-      .then(() => navigate('/home'))
-      .catch(error => console.error('There was an error submitting the form:', error));
+      .then((response) => { alert('Your message has been sent successfully!') })
+      .catch(error => alert('There was an error sending your message. Please try again.'));
   };
+
+  
 
   return (
     <body className='backgroundsettings'>
       <div className="containerCF my-5 contactFinder">
         <h2 className="text-centerCF mb-4">Contact Finder</h2>
         <Formik initialValues={initialValues} onSubmit={onSubmit} validationSchema={validationSchema}>
+        
+        {({ isSubmitting }) => (
+    
+
+
+
           <Form>
             <div className="form-group row">
               <label htmlFor="name" className="col-sm-2 col-form-label contact-finder-label">Name</label>
@@ -65,6 +73,7 @@ function ContactFinder() {
             </div>
             <button type="submit" className="sendmessagebtn">Submit</button>
           </Form>
+        )}
         </Formik>
       </div>
     </body>

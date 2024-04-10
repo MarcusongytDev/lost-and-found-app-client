@@ -5,9 +5,37 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import 'bootstrap/dist/css/bootstrap.min.css'; // Ensure Bootstrap CSS is imported
 import './loginPage.css'; // Custom styles for the form
+import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
+import { auth } from '../pages/firebase';
+import {useEffect} from 'react';
+import {UserAuth} from '../context/AuthContext'
+
 
 function LoginPage() {
+  
   const navigate = useNavigate();
+
+  const handleItemMap = () => {
+    navigate('/lostItemMap');
+  };
+
+  const {googleSignIn, user} = UserAuth();
+
+  const handleGoogle = async () => { 
+    try{  
+      await googleSignIn()
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+  useEffect(() => {
+    if(user !=null){
+      navigate('/lostItemMap');
+    }
+  }, [user]);
+
+
 
   const initialValues = {
 
@@ -54,7 +82,11 @@ function LoginPage() {
                  <ErrorMessage name="password" component="div" className="error-message" />
                </div>
              </div>
-             <button type="submit" className="loginbtn">Login</button>
+             <button type="submit" className="loginbtn1" onClick={handleItemMap} >Login</button>
+             <div>
+             <h2 className="Or">OR</h2>
+             </div>
+             <button onClick={handleGoogle} className="Sign-In-w-G" >Sign In With Google </button>
            </Form>
          </Formik>
        </div>

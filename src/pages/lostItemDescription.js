@@ -15,7 +15,19 @@ import LIC_Card from "../components/UI/LIC_Card";
 import tempImage from "../assets/questionmark-icon.png";
 
 
+
+
+
+
+
 function LostItemDescription() {
+
+    const navigate = useNavigate();
+
+    const handleContactFinder = () => {
+    navigate('/contactFinder');
+    };
+
     const { id } = useParams();
     const [postObject, setPostObject] = useState({});
     const [displayLocation, setDisplayLocation] = useState();
@@ -68,8 +80,12 @@ function LostItemDescription() {
                     <p><strong>Item Filter:</strong> {postObject.itemFilters}</p>
                     <p><strong>Description:</strong> {postObject.description}</p>
                 </div>
+
             </div>
+            <div className="primary-buttonCFfrmLostitem" onClick={handleContactFinder}>
+           <b className="contact-finder-button">Is this the item you lost? If yes. Contact the finder here</b>
         </div>
+      </div>
     );
 }
 export default LostItemDescription;

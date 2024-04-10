@@ -13,13 +13,14 @@ import LostItemMap from './pages/lostItemMap';
 import LoginPage from './pages/loginPage';
 import LostItemDescription from './pages/lostItemDescription';
 import { Link } from 'react-router-dom';
-
+import { AuthContextProvider } from './context/AuthContext';
 
 
 function Apps(){
 
   return (
     <div className="App">
+      <AuthContextProvider>
       <Router>
         <Routes>
           <Route path="/">
@@ -37,6 +38,7 @@ function Apps(){
           </Route>
         </Routes>
       </Router>
+      </AuthContextProvider>
     </div>
   );
 }

@@ -52,7 +52,10 @@
 
 }
 
-.loginbtn{
+
+
+.loginbtn1{
+    justify-content: center;
     background-color: #212c39;
     border: none;
     padding: 10px 30px;
@@ -63,8 +66,49 @@
     max-width: 200px;
     margin: 20px auto 0;
     color: #fff;
+    display:flex;
+    overflow: hidden;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
 }
 
-.loginbtn:hover{
+
+
+.loginbtn1:hover{
     background-color: #c4d0dc;
+}
+
+.Sign-In-w-G{
+    justify-content: center;
+    background-color: #212c39;
+    border: none;
+    padding: 10px 30px;
+    border-radius: 20px;
+    cursor: pointer;
+    display: block;
+    width: 1000px;
+    max-width: 200px;
+    margin: 20px auto 0;
+    color: #fff;
+    display:flex;
+    overflow: hidden;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.Sign-In-w-G:hover{
+    background-color: #c4d0dc;
+}
+
+.Or{
+    display: flex;
+    flex-direction: column ;    
+    align-items: center;
+    gap: 9px;
+    width: 100%;
+    margin-top: 30px;
+    font-size: medium;
+    color: beige;
 }

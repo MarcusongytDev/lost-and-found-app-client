@@ -32,3 +32,22 @@
     margin-left: 30px;
     margin-top: 20px;
 }
+
+.contact-finder-button{
+    justify-content: center;
+    background-color: #212c39;
+    border: none;
+    padding: 10px 30px;
+    border-radius: 20px;
+    cursor: pointer;
+    display: block;
+    width: 350px;
+    text-align: center;
+    margin: 20px auto 0;
+    color: #fff;
+    display:flex;
+    overflow: hidden;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+}
