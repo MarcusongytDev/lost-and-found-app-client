@@ -9,6 +9,10 @@ import './foundItemNotice.css';
 import GoogleMaps from "../components/API/GoogleMapsFinder.js"; // Import the GoogleMaps component
 
 function FoundItemNotice() {
+    const navigate = useNavigate();
+    const [isProcessing, setIsProcessing] = useState(false);
+    const [showProcessedPopup, setShowProcessedPopup] = useState(false);
+
     const [dateFound, setDateFound] = useState('');
     const [timeFound, setTimeFound] = useState('');
     const [selectedLocation, setSelectedLocation] = useState({}); // State to store the selected location
@@ -37,10 +41,10 @@ function FoundItemNotice() {
         phone: Yup.string().matches(/^[0-9]+$/, 'Must be a valid phone number').required('Phone number is required'),
         photo: Yup.mixed().required('Photo of item is required')
     });
-    const navigate = useNavigate();
 
     const onSubmit = async (values) => {
         console.log("here below");
+        setIsProcessing(true); // Show the first popup
         const data = new FormData();
         data.append("name", name);
         data.append("dateFound", dateFound);
@@ -63,16 +67,14 @@ function FoundItemNotice() {
 
         // Submit form data
         try {
-            // Update the selected location directly on form submission
-            // setSelectedLocation({ latitude: 123, longitude: 456 }); // Replace with the actual selected location
-            // Assuming you have a function to get the selected location from the map component
-
-            await axios.post('https://httpbin.org/anything', data).then(res => console.log(res));
-            await axios.post('http://localhost:5000/post-lost-item', data).then(res => console.log(res));
+            // Simulate API call
+            await axios.post('https://httpbin.org/anything', data);
+            setIsProcessing(false); // Hide the first popup
+            setShowProcessedPopup(true); // Show the second popup
         } catch (error) {
             console.error('There was an error submitting the form:', error);
+            setIsProcessing(false); // Ensure the popup is hidden in case of an error
         }
-        navigate("/home");
     };
     /*const handleDelete = (i) => {
         setTags(tags.filter((tag, index) => index !== i));
@@ -89,12 +91,46 @@ function FoundItemNotice() {
         setTags(newTags);
     };*/
 
+    const handleOkClick = () => {
+        setShowProcessedPopup(false); // Close the second popup
+        navigate('/home'); // Redirect to the home page
+    };
+
+    const popupStyle = {
+        position: 'fixed',
+        top: '50%',
+        left: '50%',
+        transform: 'translate(-50%, -50%)',
+        zIndex: '9999',
+        padding: '20px',
+        backgroundColor: '#fff',
+        border: '2px solid #000',
+        display: isProcessing ? 'block' : 'none',
+    };
+
+    const processedPopupStyle = {
+        ...popupStyle,
+        display: showProcessedPopup ? 'block' : 'none', // Controlled by the new state
+    };
+
     function setlocation(location){
         setSelectedLocation(location);
     }
 
     return (
-        <div className='backgroundsettings'>
+        <div className="backgroundsettings">
+            {/* First Popup */}
+            <div style={popupStyle}>
+                <h2>Processing...</h2>
+                <p>Your submission is being processed. Please wait.</p>
+            </div>
+
+            {/* Second Popup */}
+            <div style={processedPopupStyle}>
+                <h2>Processed Information</h2>
+                <p>Your information has been successfully processed.</p>
+                <button onClick={handleOkClick}>OK</button>
+            </div>
             <div className="LIN-container my-5">
                 <h2 className="LIN-heading text-center mb-4">Details of Found Item</h2>
                 <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={onSubmit}>
