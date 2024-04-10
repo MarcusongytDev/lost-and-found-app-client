@@ -27,7 +27,6 @@ function Template(){
                         <NavDropdown.Item href="/lostItemNotice" className="nav-item-spacing">Post Lost Item</NavDropdown.Item>
                         <NavDropdown.Item href="/lostItemCatalog" className="nav-item-spacing">Catalog</NavDropdown.Item>
                         <NavDropdown.Item href="/foundItemNotice" className="nav-item-spacing">Found an Item?</NavDropdown.Item>
-                        <NavDropdown.Item href="/contactFinder" className="nav-item-spacing">Contact Finder</NavDropdown.Item>
                         <NavDropdown.Divider />
                     </Nav>
                 </Navbar.Collapse>
