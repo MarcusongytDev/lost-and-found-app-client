@@ -43,11 +43,12 @@
 
     const [listOfLocations, setListOfLocations] = useState([]);
 
+    const [pos, setPos] = useState();
+
 
     useEffect(() => {
       axios.get("http://localhost:5000/get-lost-items").then((response) => {
         setListOfLocations(response.data["allLostItems"]);
-        console.log(response.data["allLostItems"]);
       });
     }, []);
     
@@ -64,19 +65,24 @@
         <PlacesAutocomplete className="Gmaps-Searchbar" setSelected = {setSelected}/>
         <Map defaultZoom={15} defaultCenter={defaultPosition} mapId={"95ff34d67269854f"} className="map-container">
         {listOfLocations.map((value, key) => {
-          console.log(value["location"][1])
           const LAT = Number(value["location"][1]);
           const LNG = Number(value["location"][2]);
           const setPosition = {lat: LAT, lng: LNG};
+          console.log(setPosition);
           
-          // fetch(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${String(LAT)},${String(LNG)}&key=${KEY}`).then((res) =>{
-          //   return res.json();
-          // }).then((data) => {
-          //   setLocationObject = data["results"][1]["formatted_address"]
-          // }).catch((e) => {console.log("no formatted address available")});
 
 
-          if(LAT != undefined){
+          if(LAT != (undefined||null)){
+            // fetch(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${String(LAT)},${String(LNG)}&key=${KEY}`).then((res) => {
+            //   return res.json()
+            // }).then((data) => {
+            //   setPos(data["results"][1]["formatted_address"]);
+            // }).catch((e) => {
+            //   console.log("No formatted address");
+            // });
+
+            
+
             return(
               <>
                 <AdvancedMarker position={setPosition} onClick={() => {setSelectedKey(key+1)}}>
@@ -91,9 +97,9 @@
                             <p>{value["itemFilters"]}</p>
                         </Card.Text>
                     </Card.Body>
-                    <ListGroup variant="flush" style={{fontStyle: "italic"}}>
+                    <ListGroup variant="flush" style={{fontStyle: "italic"}} >
                         <ListGroup.Item>
-                          {/* <strong>Location :</strong>{locationObject} */}
+                          {/* <strong>Location :</strong>{pos} */}
                         </ListGroup.Item>
                     </ListGroup>
                     </Card>
@@ -109,13 +115,13 @@
           }
           })
         }
-        {selected && open && (
+        {selected && (
           <>
             <AdvancedMarker position={selected}>
               <Pin />
             </AdvancedMarker>
             <InfoWindow disableAutoPan={false} position={selected} onCloseClick={() => setOpen(false)}>
-              <p className="disable-opacity"><strong>Selected Location</strong></p>
+              <p><strong>Selected Location</strong></p>
             </InfoWindow>
           </>
         )}
@@ -136,10 +142,8 @@
     const handleSelect = async(address) => {
       setValue(address, false);
       clearSuggestions();
-      console.log(address);
       const results = await getGeocode({address});
       const {lat, lng} = await getLatLng(results[0]);
-      console.log({lat, lng});
       setSelected({lat, lng});
     }
     return (

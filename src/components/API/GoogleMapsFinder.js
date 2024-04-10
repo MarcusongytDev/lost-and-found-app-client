@@ -30,7 +30,7 @@ export default function GoogleMaps({setlocation}) {
 
   
 
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(true);
   const position = { lat: 1.349, lng: 103.739 }
   // Get places library in google maps api
 
@@ -43,13 +43,14 @@ export default function GoogleMaps({setlocation}) {
     <APIProvider>
       <PlacesAutocomplete className="Gmaps-Searchbar" setSelected = {setSelected}/>
       {/* <button type="submit" onClick={() => setlocation(selected)}></button> */}
-      <Map defaultZoom={15} defaultCenter={position} mapId={"95ff34d67269854f"} className="map-container">
+      <Map defaultZoom={15} defaultCenter={position} mapId={"95ff34d67269854f"} className="map-container" onClick={() => setOpen(true)}>
         {selected && (
           <>
             <AdvancedMarker position={selected}>
               <Pin />
+              {open && <InfoWindow disableAutoPan={false} position={selected} onCloseClick={()=>{setOpen(false)}}><p>Selected Location</p></InfoWindow>}
             </AdvancedMarker>
-            <InfoWindow disableAutoPan={false} position={selected} ><p>Selected Location</p>{setlocation(selected)}</InfoWindow>
+            
           </>
         )
         }
