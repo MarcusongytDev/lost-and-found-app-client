@@ -7,14 +7,14 @@
 
 /* Default styles for the navbar, you can place common styles here */
 .navbar-custom {
-    color: rgb(255, 255, 255); /* default text color */
+    color: rgb(173, 234, 173); /* default text color */
     /*font-family: 'Amazonic';*/
   }
 
 .navbar-title-custom {
     font-family: 'Amazonic'; /* Replace 'YourDesiredFontFamily' with the actual font you want */
     font-size: 33px; /* Adjust the size as needed */
-    /* Add any other font styling properties you need */
+    color: rgb(173, 234, 173);
   }  
 
 /* Light mode specific styles */
@@ -25,7 +25,7 @@ background-color: rgba(0, 0, 0); /* Dark green background */
 /* Dark mode specific styles */
 .dark-mode-theme .navbar-custom {
 background-color: rgba(0, 0, 0); /* Light green background */
-color: #000000; /* Dark green text color */
+color: rgb(173, 234, 173); /* Dark green text color */
 }
 
 .nav.me-auto{

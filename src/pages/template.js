@@ -17,7 +17,8 @@ function Template(){
             <body className="template-background"></body>
             <Navbar expand="lg" className="navbar-dark navbar-custom">
                 <Container fluid>
-                <Navbar.Brand className="navbar-custom" href="/home">Foraged</Navbar.Brand>
+                <Navbar.Brand className="navbar-title-custom" href="/home">Foraged</Navbar.Brand>    
+                <Navbar.Brand className="navbar-custom" href="/home"></Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />  
                 <Navbar.Collapse id="responsive-navbar-nav" className="navbar-collapse">
                     <Nav className="ms-auto">
