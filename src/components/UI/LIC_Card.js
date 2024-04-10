@@ -41,6 +41,15 @@ export default function LIC_Card(props){
         }).catch((e) => {console.log("no formatted address available")})
     },[]);
 
+    // Process JSON object
+    const tagsStringify = props.tags;
+    console.log(typeof tagsStringify)
+    console.log(tagsStringify);
+    const tags = JSON.parse(tagsStringify);
+
+    console.log(tags);
+    console.log(Object.keys(tags))
+    console.log(tags[0])
 
     return(
         <Card style={{ width: '400px'}} onClick={routeChange} className="LIC-Card-Hover">
@@ -48,7 +57,11 @@ export default function LIC_Card(props){
             <Card.Body>
                 <Card.Title style={{fontWeight: "bold"}}>{props.name}</Card.Title>
                 <Card.Text>
-                    <p>{props.tags}</p>
+                {Object.keys(tags).map((value, key) => {
+                    return(
+                    <li key={key}>{tags[key]}</li>
+                    );
+                })}
                 </Card.Text>
             </Card.Body>
             <ListGroup variant="flush" style={{fontStyle: "italic"}}>
