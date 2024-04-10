@@ -19,22 +19,20 @@ import {
   ComboboxOption,
 } from "@reach/combobox";
 import "@reach/combobox/styles.css";
-import './GoogleMapsFinder.css'
+import './GoogleMapsFinder.css';
+
+// Define the libraries array outside of the component
+const libraries = ["places"];
 
 export default function GoogleMaps({setlocation}) {
-
   const { isLoaded } = useLoadScript({
     googleMapsApiKey: "AIzaSyB5yzIMiOUagFda-20MnNBruQAGgdsVPfc",
-    libraries: ["places"],
+    libraries: libraries, // Pass the libraries array
   });
-
-  
 
   const [open, setOpen] = useState(true);
   const position = { lat: 1.349, lng: 103.739 }
-  // Get places library in google maps api
 
-  // Selected allows us to pass a location and render it as a market on the map
   const [selected, setSelected] = useState(false);
 
   if (!isLoaded) return <div>Loading...</div>;
@@ -42,7 +40,6 @@ export default function GoogleMaps({setlocation}) {
   return (
     <APIProvider>
       <PlacesAutocomplete className="Gmaps-Searchbar" setSelected = {setSelected}/>
-      {/* <button type="submit" onClick={() => setlocation(selected)}></button> */}
       <Map defaultZoom={15} defaultCenter={position} mapId={"95ff34d67269854f"} className="map-container" onClick={() => setOpen(true)}>
         {selected && (
           <>
@@ -59,7 +56,7 @@ export default function GoogleMaps({setlocation}) {
   );
 }
 
-const PlacesAutocomplete = ({setSelected}, {setlocation}) =>{
+const PlacesAutocomplete = ({setSelected}) =>{
   const {
     ready,
     value,
@@ -71,12 +68,9 @@ const PlacesAutocomplete = ({setSelected}, {setlocation}) =>{
   const handleSelect = async(address) => {
     setValue(address, false);
     clearSuggestions();
-    console.log(address);
     const results = await getGeocode({address});
-    console.log(results);
     const {lat, lng} = await getLatLng(results[0]);
     setSelected({lat, lng});
-    // setlocation({lat, lng});
   }
   return (
     <Combobox onSelect={handleSelect}>
