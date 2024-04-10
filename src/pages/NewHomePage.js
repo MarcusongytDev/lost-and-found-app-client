@@ -7,7 +7,7 @@ const NewHomePage = () => {
   const navigate = useNavigate();
 
   const handleLookingForItemClick = () => {
-    navigate('/loginPage');
+    navigate('/lostItemMap');
   };
 
   const handleFoundAnItemClick = () => {

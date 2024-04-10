@@ -11,6 +11,8 @@ import GoogleMaps from '../components/API/GoogleMapsFinder'; // Import the Googl
 function LostItemNotice() {
     const { user } = useAuth();
     const navigate = useNavigate();
+    const [isProcessing, setIsProcessing] = useState(false); // Add a state to track processing
+    const [showProcessedPopup, setShowProcessedPopup] = useState(false); // New state for the second popup
 
     const [selectedLocation, setSelectedLocation] = useState({});
     const [name, setName] = useState('');
@@ -38,13 +40,14 @@ function LostItemNotice() {
         photo: Yup.mixed().required('Photo of item is required')
     });
 
-    useEffect(() => {
-        if (!user) {
-            navigate('/loginPage');
-        }
-    }, [user, navigate]);
+    //useEffect(() => {
+     //  if (!user) {
+    //    navigate('/loginPage');
+     //   }
+   // }, [user, navigate]);
 
     const onSubmit = async (values) => {
+        setIsProcessing(true); // Start processing
         const data = new FormData();
         data.append('name', name);
         data.append('itemName', itemName);
@@ -59,15 +62,53 @@ function LostItemNotice() {
         data.append('photo', photo);
 
         try {
-            await axios.post('http://localhost:5000//post-lost-item-notice', data);
-            navigate('/home');
+            await axios.post('http://localhost:5000/post-lost-item-notice', data);
+            setIsProcessing(false); // Hide the first popup
+            setShowProcessedPopup(true); // Show the second popup
         } catch (error) {
             console.error('There was an error submitting the form:', error);
+            setIsProcessing(false); // Ensure we handle errors gracefully
         }
+    };
+
+    const handleOkClick = () => {
+        setShowProcessedPopup(false); // Close the second popup
+        navigate('/home'); // Redirect to the home page
+    };
+
+    const popupStyle = {
+        position: 'fixed',
+        top: '50%',
+        left: '50%',
+        transform: 'translate(-50%, -50%)',
+        zIndex: '9999',
+        padding: '20px',
+        backgroundColor: '#fff', // White background
+        border: '2px solid #000', // Black border, adjust thickness as needed
+        display: isProcessing ? 'block' : 'none', // Controlled by isProcessing state
+        boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.1)', // Optional: adds a subtle shadow for depth
+        borderRadius: '10px', // Optional: rounds the corners for a softer look
+    };
+
+    const processedPopupStyle = {
+        ...popupStyle,
+        display: showProcessedPopup ? 'block' : 'none', // Controlled by the new state
     };
 
     return (
         <div className="backgroundsettings">
+            {/* First Popup */}
+            <div style={popupStyle}>
+                <h2>Processing...</h2>
+                <p>Your submission is being processed. Please wait.</p>
+            </div>
+
+            {/* Second Popup */}
+            <div style={processedPopupStyle}>
+                <h2>Processed Information</h2>
+                <p>Your information has been successfully processed.</p>
+                <button onClick={handleOkClick}>OK</button>
+            </div>
             <div className="LIN-container my-5">
                 <h2 className="LIN-heading text-center mb-4">Report a Lost Item</h2>
                 <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={onSubmit}>

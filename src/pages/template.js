@@ -24,7 +24,7 @@ function Template(){
                     <Nav className="ms-auto">
                         <NavDropdown.Item href="/home" className="nav-item-spacing">Home</NavDropdown.Item>
                         <NavDropdown.Item href="/settings" className="nav-item-spacing">Settings</NavDropdown.Item>
-                        <NavDropdown.Item href="/lostItemNotice" className="nav-item-spacing">Post Lost Item</NavDropdown.Item>
+                        <NavDropdown.Item href="/lostItemNotice" className="nav-item-spacing">Report Lost Item</NavDropdown.Item>
                         <NavDropdown.Item href="/lostItemCatalog" className="nav-item-spacing">Catalog</NavDropdown.Item>
                         <NavDropdown.Item href="/foundItemNotice" className="nav-item-spacing">Found an Item?</NavDropdown.Item>
                         <NavDropdown.Divider />

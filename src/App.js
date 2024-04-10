@@ -10,7 +10,7 @@ import ContactFinder from './pages/contactFinder';
 import Settings from './pages/settings';
 import FilteredSearch from './pages/filteredSearch';
 import LostItemMap from './pages/lostItemMap';
-import LoginPage from './pages/loginPage';
+//import LoginPage from './pages/loginPage';
 import LostItemDescription from './pages/lostItemDescription';
 import { Link } from 'react-router-dom';
 import { AuthContextProvider } from './context/AuthContext';
@@ -34,7 +34,7 @@ function Apps(){
             <Route path = "foundItemNotice" exact element={<><Template/><FoundItemNotice/></>} />
             <Route path = "contactFinder" exact element={<><Template/><ContactFinder/></>} /> 
             <Route path = "filteredSearch" exact element={<><Template/><FilteredSearch/></>} />
-            <Route path = "loginPage" exact element={<><Template/><LoginPage/></>} />
+            
             <Route path = "LostItemMap" exact element={<LostItemMap/>} /> 
             <Route path = "LostItemDescription/:id" exact element={<><Template/><LostItemDescription/></>} /> 
           </Route>

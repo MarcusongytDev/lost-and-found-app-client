@@ -24,11 +24,11 @@ function LostItemCatalog() {
       const allPosts = response.data["allLostItems"];
       setListOfPosts(allPosts);
       setFilteredPosts(allPosts); 
-    });
-      if (!user) {
-        navigate('/loginPage');
-      }
-  }, [user, navigate]);
+    }); });
+     // if (!user) {
+     //   navigate('/loginPage');
+     // }
+  //}, [user, navigate]);
 
   const highlightMatch = (tag, keyword) => {
     if (!keyword) return tag; // If keyword is empty, return the original tag
