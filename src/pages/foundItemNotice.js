@@ -49,7 +49,7 @@ function FoundItemNotice() {
         data.append("description", description);
         data.append("email", email);
         data.append("phone", phone);
-        data.append("itemFilter", tags.map(tag=>tag.text));
+        data.append("itemFilter", JSON.stringify(tags.map(tag => tag.text)));
         //parse location as an object of lat and long
         data.append("location", {});
         for (var key in selectedLocation) {
