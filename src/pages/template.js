@@ -17,7 +17,7 @@ function Template(){
             <body className="template-background"></body>
             <Navbar expand="sm" className="justify-content-center navbar-dark navbar-custom">
                 <Container fluid>
-                <Navbar.Brand className="navbar-custom" href="/home">Lost & Found</Navbar.Brand>
+                <Navbar.Brand className="navbar-custom" href="/home">Foraged</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />  
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <NavDropdown title="Menu" id="collapsible-nav-dropdown">

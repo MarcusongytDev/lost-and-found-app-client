@@ -1,3 +1,4 @@
+
 .never-lose-again,
 .we-are-committed {
   position: relative;
@@ -214,16 +215,15 @@
 }
 
 .video-background {
-  position: fixed; /* Fixed or absolute depending on your layout */
-  right: 0;
-  bottom: 0;
-  min-width: 100%; 
-  min-height: 100%;
+  position: fixed;
+  top: 50%; 
+  left: 50%; 
   width: auto;
   height: auto;
-  z-index: -100; /* Behind everything */
-  object-fit: contain; /* This makes the video fit the container while seeing the whole video */
-  background-size: cover; /* Cover the entire page */
-  overflow: hidden;
-  transition: 1s opacity; /* Smooth transition for loading */
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -100;
+  transform: translate(-50%, -50%) scale(0.5); /* Adjust scale as needed */
+  object-fit: cover; /* Cover the container */
 }
+
