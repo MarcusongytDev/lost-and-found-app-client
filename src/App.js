@@ -6,6 +6,7 @@ import LostItemCatalog from "./pages/lostItemCatalog";
 import LostItemNotice from './pages/lostItemNotice';
 import FoundItemNotice from './pages/foundItemNotice';
 import Template from './pages/template';
+import FinderTemplate from './pages/FinderTemplate';
 import ContactFinder from './pages/contactFinder';  
 import Settings from './pages/settings';
 import FilteredSearch from './pages/filteredSearch';
@@ -29,7 +30,8 @@ function Apps(){
             <Route path = "lostItemNotice" exact element={<><Template/><LostItemNotice/></>} />
             <Route path = "lostItemCatalog" exact element={<><Template/><LostItemCatalog/></>} />
             <Route path = "settings" exact element={<><Template/><Settings/></>} />
-            <Route path = "foundItemNotice" exact element={<><Template/><FoundItemNotice/></>} />
+            <Route path = "settingsFinder" exact element={<><FinderTemplate/><Settings/></>} />
+            <Route path = "foundItemNotice" exact element={<><FinderTemplate/><FoundItemNotice/></>} />
             <Route path = "contactFinder" exact element={<><Template/><ContactFinder/></>} /> 
             <Route path = "filteredSearch" exact element={<><Template/><FilteredSearch/></>} />
             <Route path = "loginPage" exact element={<><Template/><LoginPage/></>} />
