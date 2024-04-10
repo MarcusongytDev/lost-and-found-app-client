@@ -68,7 +68,7 @@ export default function LostItemDescription() {
                 <div className="product-info">
                     <p><strong>Name:</strong> {postObject.name}</p>
                     <p><strong>Location:</strong> {displayLocation}</p>
-                    <p><strong>Date & Time Found: </strong>{postObject.dateTimeFound}</p>
+                    <p><strong>Date & Time Found: </strong>{postObject.dateFound + " " + postObject.timeFound}</p>
                     <p><strong>Email:</strong> {postObject.email}</p>
                     <p><strong>Phone Number:</strong> {postObject.phoneNumber}</p>
                     <p><strong>Item Filters: </strong>

@@ -73,7 +73,9 @@ function LostItemCatalog() {
               <LIC_Card 
                 name={value.name} 
                 tags={value.itemFilters} 
-                locationFound={value.location} 
+                locationFound={value.location}
+                dateFound={value.dateFound}
+                timeFound={value.timeFound}
                 ImageURL={value.ImageURL} 
                 keyword={keyword} 
                 highlightMatch={highlightMatch} 
