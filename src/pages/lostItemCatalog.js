@@ -16,7 +16,7 @@ function LostItemCatalog() {
   const [filteredPosts, setFilteredPosts] = useState([]);
   const [keyword, setKeyword] = useState("");
 
-    const { user } = useAuth();
+  const { user } = useAuth();
   let navigate = useNavigate();
 
   useEffect(() => {
@@ -24,11 +24,8 @@ function LostItemCatalog() {
       const allPosts = response.data["allLostItems"];
       setListOfPosts(allPosts);
       setFilteredPosts(allPosts); 
-    }); });
-     // if (!user) {
-     //   navigate('/loginPage');
-     // }
-  //}, [user, navigate]);
+    }); 
+  }, []);
 
   const highlightMatch = (tag, keyword) => {
     if (!keyword) return tag; // If keyword is empty, return the original tag
@@ -38,13 +35,16 @@ function LostItemCatalog() {
 
   const handleKeywordChange = (event) => {
     const newKeyword = event.target.value.toLowerCase();
+    console.log("New Keyword:", newKeyword); // Add this line to check if the function is triggered
     setKeyword(newKeyword);
 
     const filtered = listOfPosts.filter(post => {
       const tags = Object.values(post.itemFilters);  
+      console.log("Tags:", tags); // Add this line to check if tags are being extracted correctly
       return tags.some(tag => tag.toLowerCase().includes(newKeyword)); 
     });
 
+    console.log("Filtered Posts:", filtered); // Add this line to check the filtered posts
     setFilteredPosts(filtered); 
   };
 
