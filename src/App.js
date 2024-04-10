@@ -36,7 +36,7 @@ function Apps(){
             <Route path = "filteredSearch" exact element={<><Template/><FilteredSearch/></>} />
             <Route path = "loginPage" exact element={<><Template/><LoginPage/></>} />
             <Route path = "LostItemMap" exact element={<LostItemMap/>} /> 
-            <Route path = "LostItemDescription/:id" exact element={<LostItemDescription/>} /> 
+            <Route path = "LostItemDescription/:id" exact element={<><Template/><LostItemDescription/></>} /> 
           </Route>
         </Routes>
       </Router>

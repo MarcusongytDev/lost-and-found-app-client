@@ -14,7 +14,6 @@ import './lostItemDescription.css';
 import LIC_Card from "../components/UI/LIC_Card";
 import tempImage from "../assets/questionmark-icon.png";
 
-
 export default function LostItemDescription() {
     const { id } = useParams();
     const [postObject, setPostObject] = useState({});
