@@ -43,8 +43,6 @@ export default function LIC_Card(props){
 
     // Process JSON object
     const tagsStringify = props.tags;
-    console.log(typeof tagsStringify)
-    console.log(tagsStringify);
     const tags = JSON.parse(tagsStringify);
 
     console.log(tags);
@@ -59,7 +57,7 @@ export default function LIC_Card(props){
                 <Card.Text>
                 {Object.keys(tags).map((value, key) => {
                     return(
-                    <li key={key}>{tags[key]}</li>
+                    <li>{tags[key]}</li>
                     );
                 })}
                 </Card.Text>

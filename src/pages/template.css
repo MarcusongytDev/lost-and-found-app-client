@@ -1,17 +1,17 @@
 
 /* Default styles for the navbar, you can place common styles here */
 .navbar-custom {
-    color: white; /* default text color */
+    color: rgb(255, 255, 255); /* default text color */
   }
   
 /* Light mode specific styles */
 .light-mode-theme .navbar-custom {
-background-color: #093125; /* Dark green background */
+background-color: rgba(0, 0, 0); /* Dark green background */
 }
   
 /* Dark mode specific styles */
 .dark-mode-theme .navbar-custom {
-background-color: #1b483b; /* Light green background */
+background-color: rgba(0, 0, 0); /* Light green background */
 color: #000000; /* Dark green text color */
 }
   
