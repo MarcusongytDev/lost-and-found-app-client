@@ -70,7 +70,7 @@
           
 
 
-          if(LAT != (undefined||null)){
+          if(LAT != undefined || LAT != NaN || LAT != null){
 
             return(
               <>
