@@ -5,6 +5,9 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 import './foundItemNotice.css';
 import * as Yup from 'yup';
 import { WithContext as ReactTags } from 'react-tag-input';
+import * as Yup from 'yup';
+import './foundItemNotice.css';
+import FinderTemplate from './FinderTemplate';
 import GoogleMaps from "../components/API/GoogleMapsFinder.js"; // Import the GoogleMaps component
 
 function FoundItemNotice() {
