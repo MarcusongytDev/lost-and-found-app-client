@@ -15,22 +15,11 @@ import LIC_Card from "../components/UI/LIC_Card";
 import tempImage from "../assets/questionmark-icon.png";
 
 
-
-
-
-
-
-function LostItemDescription() {
-
-    const navigate = useNavigate();
-
-    const handleContactFinder = () => {
-    navigate('/contactFinder');
-    };
-
+export default function LostItemDescription() {
     const { id } = useParams();
     const [postObject, setPostObject] = useState({});
     const [displayLocation, setDisplayLocation] = useState();
+    const [postObjectItemFilters, setPostObjectItemFilters] = useState({});
     // Example product details
     // In a real application, you would fetch these details from an API or a Redux store
     const product = {
@@ -48,7 +37,6 @@ function LostItemDescription() {
     useEffect(() => {
       axios.get("http://localhost:5000/get-lost-items").then((response) => {
         setPostObject(response.data["allLostItems"][id]);
-        console.log(response.data["allLostItems"][id]);
         const LAT = String(response.data["allLostItems"][id]["location"][1]);
         const LNG = String(response.data["allLostItems"][id]["location"][2]);
         const KEY = "AIzaSyB5yzIMiOUagFda-20MnNBruQAGgdsVPfc";
@@ -60,6 +48,12 @@ function LostItemDescription() {
         }).catch((e) => {console.log("no formatted address available")})
       });
     }, []);
+
+    useEffect(() => {
+      axios.get("http://localhost:5000/get-lost-items").then((response)=>{
+        setPostObjectItemFilters(response.data["allLostItems"][id]["itemFilters"]);
+      }
+    )});
 
 
     return (
@@ -77,15 +71,20 @@ function LostItemDescription() {
                     <p><strong>Date & Time Found: </strong>{postObject.dateTimeFound}</p>
                     <p><strong>Email:</strong> {postObject.email}</p>
                     <p><strong>Phone Number:</strong> {postObject.phoneNumber}</p>
-                    <p><strong>Item Filter:</strong> {postObject.itemFilters}</p>
+                    <p><strong>Item Filters: </strong>
+                    {Object.keys(postObjectItemFilters).map((value, key) => {
+                      if(postObjectItemFilters == undefined || postObjectItemFilters == null){
+                        return ;
+                      }else{
+                      return(
+                        <li>{postObjectItemFilters[key]}</li>
+                      )};
+                      })
+                    }
+                    </p>
                     <p><strong>Description:</strong> {postObject.description}</p>
                 </div>
-
             </div>
-            <div className="primary-buttonCFfrmLostitem" onClick={handleContactFinder}>
-           <b className="contact-finder-button">Is this the item you lost? If yes. Contact the finder here</b>
         </div>
-      </div>
     );
 }
-export default LostItemDescription;
