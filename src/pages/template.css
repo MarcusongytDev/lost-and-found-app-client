@@ -14,18 +14,18 @@
 .navbar-title-custom {
     font-family: 'Amazonic'; /* Replace 'YourDesiredFontFamily' with the actual font you want */
     font-size: 33px; /* Adjust the size as needed */
-    /* Add any other font styling properties you need */
+    color: rgb(115, 163, 115);
   }  
 
 /* Light mode specific styles */
 .light-mode-theme .navbar-custom {
-background-color: rgba(0, 0, 0); /* Dark green background */
+background-color: rgb(0, 0, 0); /* Dark green background */
 }
   
 /* Dark mode specific styles */
 .dark-mode-theme .navbar-custom {
 background-color: rgba(0, 0, 0); /* Light green background */
-color: #000000; /* Dark green text color */
+color: #ffffff; /* Dark green text color */
 }
   
 .template-footer{

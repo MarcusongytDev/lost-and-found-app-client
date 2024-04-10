@@ -1,3 +1,9 @@
+@font-face {
+    font-family: 'Libre';
+    src: url('../fonts/LibreBaskerville-Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
 
 .settings-overall-settings{
     width: 50%;
@@ -16,6 +22,8 @@
     text-align: center;
     padding-bottom: 10px;
     text-decoration: underline;
+    font-family: 'Libre';
+    font-weight: bold;
 }
 .btn-settings{
     text-align: center;
