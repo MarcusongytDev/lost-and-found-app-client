@@ -1,6 +1,6 @@
 @font-face {
-  font-family: 'League';
-  src: url('../fonts/LeagueSpartan-VariableFont_wght.ttf') format('truetype');
+  font-family: 'Libre';
+  src: url('../fonts/LibreBaskerville-Bold.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -12,18 +12,22 @@
   align-items: center;
   justify-content: center;
   color:rgb(255, 255, 255);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
 }
 .never-lose-again {
   width: 676px;
   font-size: 80px;
   letter-spacing: 0.01em;
-  font-family: 'League';
+  font-family: 'Libre';
+  font-weight: bold;
+  line-height: normal;
 }
 .we-are-committed {
   width: 632px;
   font-size: var(--font-size-5xl);
-  text-decoration: underline;
   line-height: 32px;
+  font-family: 'Libre'
+  ;
 }
 .looking-for-an {
   position: relative;
@@ -116,42 +120,7 @@
   color: var(--color-white);
   font-family: var(--font-inter);
 }
-.never-lose-again,
-.we-are-committed {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.never-lose-again {
-  width: 676px;
-  font-size: 80px;
-  letter-spacing: 0.01em;
-}
-.we-are-committed {
-  width: 632px;
-  font-size: var(--font-size-5xl);
-  text-decoration: underline;
-  line-height: 32px;
-}
-.looking-for-an {
-  position: relative;
-  line-height: 18px;
-}
-.found-an-item {
-  width: 194px;
-  position: relative;
-  line-height: 18px;
-  align-items: center;
-  height: 21px;
-  flex-shrink: 0;
-}
-.content,
-.found-an-item,
-.primary-button1 {
-  display: flex;
-  justify-content: center;
-}
+
 .primary-button,
 .primary-button1 {
   width: 307px; /* Set a fixed width for the buttons */
@@ -179,34 +148,6 @@
 .primary-button:hover,
 .primary-button1:hover {
   background-color: #e0e0e0;
-}
-
-.content {
-  align-self: stretch;
-  height: 546px;
-  flex-direction: column;
-  align-items: center;
-  gap: 32px;
-}
-
-.line-icon,
-.new-home-page-child1,
-.new-home-page-inner {
-  position: absolute;
-  top: 12px;
-  left: 1406px;
-  max-height: 100%;
-  width: 43px;
-}
-
-.new-home-page {
-  width: 100%;
-  position: relative;
-  background-color: var(--color-white);
-  text-align: center;
-  font-size: var(--font-size-xs);
-  color: var(--color-white);
-  font-family: var(--font-inter);
 }
 
 .never-lose-again,
