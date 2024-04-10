@@ -15,6 +15,7 @@ import LoginPage from './pages/loginPage';
 import LostItemDescription from './pages/lostItemDescription';
 import { Link } from 'react-router-dom';
 import { AuthContextProvider } from './context/AuthContext';
+import ProtectedRoute from './context/ProtectedRoute'; 
 
 
 function Apps(){

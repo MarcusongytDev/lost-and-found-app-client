@@ -14,6 +14,7 @@ import './lostItemCatalog.css';
 import LIC_Card from "../components/UI/LIC_Card";
 import tempImage from "../assets/questionmark-icon.png";
 import Form from 'react-bootstrap/Form';
+import { useAuth } from '../context/AuthContext'; 
 
 
 
@@ -25,6 +26,7 @@ function LostItemCatalog() {
     //         setPostObject(response.data);
     //     })
     // });
+    const { user } = useAuth();
     let navigate = useNavigate();
     const routeChange = () =>{
       let path = "";
@@ -38,7 +40,10 @@ function LostItemCatalog() {
         setListOfPosts(response.data["allLostItems"]);
         console.log(response.data["allLostItems"]);
       });
-    }, []);
+      if (!user) {
+        navigate('/loginPage');
+      }
+    }, [user, navigate]);
 
     
 

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
@@ -6,8 +6,10 @@ import { WithContext as ReactTags } from 'react-tag-input';
 import * as Yup from 'yup';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './lostItemNotice.css';
+import { useAuth } from '../context/AuthContext'; 
 
 function LostItemNotice() {
+  const { user } = useAuth();
   const navigate = useNavigate();
 
   // Initialize tags state for itemFilter tags
@@ -28,6 +30,12 @@ function LostItemNotice() {
     location: Yup.string().required('Required'),
     description: Yup.string().required('Required')
   });
+
+  useEffect(() => {
+    if (!user) {
+      navigate('/loginPage');
+    }
+  }, [user, navigate]);
 
   const onSubmit = (values) => {
     const dataToSubmit = {

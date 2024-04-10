@@ -22,10 +22,10 @@ function Template(){
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
                         <NavDropdown.Item href="/home">Home</NavDropdown.Item>
+                        <NavDropdown.Item href="/settings">Settings</NavDropdown.Item>
                         <NavDropdown.Item href="/lostItemNotice">Lost Item Notice</NavDropdown.Item>
                         <NavDropdown.Item href="/lostItemCatalog">Lost Item Catalog</NavDropdown.Item>
                         <NavDropdown.Item href="/foundItemNotice">Found Item Notice</NavDropdown.Item>
-                        <NavDropdown.Item href="/settings">Settings</NavDropdown.Item>
                         <NavDropdown.Item href="/contactFinder">Contact Finder</NavDropdown.Item>
                         <NavDropdown.Divider />
                     </Nav>

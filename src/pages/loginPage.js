@@ -31,7 +31,7 @@ function LoginPage() {
 
   useEffect(() => {
     if(user !=null){
-      navigate('/lostItemMap');
+      navigate('/loginPage');
     }
   }, [user]);
 
