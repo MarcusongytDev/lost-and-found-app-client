@@ -68,7 +68,7 @@ function FoundItemNotice() {
         // Submit form data
         try {
             // Simulate API call
-            await axios.post('https://httpbin.org/anything', data);
+            await axios.post('http://localhost:5000/post-lost-item', data);
             setIsProcessing(false); // Hide the first popup
             setShowProcessedPopup(true); // Show the second popup
         } catch (error) {
