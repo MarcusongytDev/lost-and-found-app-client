@@ -66,12 +66,10 @@
           const LAT = Number(value["location"][1]);
           const LNG = Number(value["location"][2]);
           const setPosition = {lat: LAT, lng: LNG};
-          console.log(setPosition);
-          
+          console.log(isNaN(setPosition["lat"]))
 
 
-          if(LAT != NaN){
-
+          if(isNaN(setPosition["lat"]) == false){
             return(
               <>
                 <AdvancedMarker position={setPosition} onClick={() => {setSelectedKey(key+1)}}>
