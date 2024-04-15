@@ -108,7 +108,7 @@ This repository contains the server side source code for the Foraged web applica
 
 ### Section 2: Features
 
-#### 2.1 Image tagging using Google Gemini AI Image Recognition and Generative AI
+#### 2.1 Auto Pinning on Google Maps API using Places API & AdvancedMarker Element
 
 Our server automatically tags images uploaded into the system with keyword tags that are used for various functions, such as; filtering by keywords, matching of lost item notices to posted lost items and many more. This is accomplished by leveraging Google's Gemini API. Through meticulous prompt engineering and micro-training of the Gemini Pro Vision implementation, we have achieved a resultant response from Gemini that we are able to use 99% of the time to populate any image with keyword tags.
 
