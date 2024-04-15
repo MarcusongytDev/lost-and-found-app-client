@@ -1,89 +1,150 @@
-# Getting Started with Create React App
+# SC2006 Team Varghes Client Side Repository
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Foraged Web Application
 
-## Available Scripts
+<div>
+<img src="http://img.shields.io/badge/Javascript-fcd400?style=flat-square&logo=javascript&logoColor=black" alt="Javascript">
+<img src="https://img.shields.io/badge/Node.js-43853D?style=flat-square&logo=node.js&logoColor=white" alt="Node.js">
+<img src="https://img.shields.io/badge/Express.js-17202C?style=flat-square&logo=express" alt="Express.js">
+  <img src="https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=fff&style=flat-square" alt="Typescript">
+<img src="https://img.shields.io/badge/firebase-ffca28?style=flat-square&logo=firebase&logoColor=black" alt="Firebase">
+<img src="https://img.shields.io/badge/.ENV-ECD53F?logo=dotenv&logoColor=black&style=flat-square" alt=".env">
+<img src="https://img.shields.io/badge/Google%20Gemini-8E75B2?logo=googlegemini&logoColor=fff&style=flat-square" alt="Gemini">
+<img src="https://img.shields.io/badge/Google%20Maps-4285F4?logo=googlemaps&logoColor=fff&style=flat-square" alt="GoogleMaps">
+</div>
 
-In the project directory, you can run:
+<img src="./Foraged-Logo.png" alt="cover" style="width:100%;height:auto;">
 
-### `npm start`
+### Team Members:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- [Marcus Ong](https://github.com/MarcusongytDev)
+- [Luo Maoyuan](https://github.com/LuoMaoyuan01)
+- [Xavier Tan]()
+- [Rhea George]()
+- [Phoebe Lee]()
+- [Poh Qi Bin]()
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## Environment Set up for Local Deployment
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+This server side code is developed with [React JS](https://react.dev/) and tested on [Visual Studio Code](https://code.visualstudio.com/).
 
-### `npm run build`
+**To run the application:**  
+First, clone the repository into your local device, the directory should look something like this:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```
+├── LOST-AND-FOUND-APP-CLIENT
+|   ├── node_modules
+|   ├── public
+|   ├── src
+```
 
 
-•	Install axios to help make API requests easier npm install axios
-•	Install react-router-dom allows you to implement dynamic routing in a web app npm install react-router-dom
-•	Install formik to use for form creation npm install formik
-•	Install yup to use for form validation npm install yup
-•	Install react-bootstrap to use for easier HTML component creation npm install react-bootstrap bootstrap
-•	Install react-responsive, npm install react-responsive
-•	Install react-toggle, npm install react-toggle
-    npm install "@vis.gl/react-google-maps"
-    npm install "use-places-autocomplete"
-    npm config set legacy-peer-deps true
-    npm install "@reach/combobox"
-    npm install "@react-google-maps/api"
-    npm install "react-tag-input"
-    npm install 'react-dnd-html5-backend'
-    npm install 'react-dnd'
-    npm install react-datepicker
-    npm install firebase
+You will require:
+
+- [axios](https://axios-http.com/docs/intro) Assists in API calling
+- [Google Maps](https://developers.google.com/maps/documentation/javascript/get-api-key) API Key
+- [react-router-dom](https://v5.reactrouter.com/web/guides/quick-start) Implements dynamic routing in website
+- [formik](https://formik.org/) Utilized for cleaner and easier creation for forms
+- [yup](https://www.npmjs.com/package/yup) Utilized for form validation
+- [react-bootstrap](https://react-bootstrap.netlify.app/) Utilized for easier creation of dynamic & interactive webpages
+- [react-responsive](https://www.npmjs.com/package/react-responsive) Simplifies the task for adjusting components based on existing viewing screen size
+- [@vis.gl/react-google-maps](https://visgl.github.io/react-google-maps/) Simplifies usage of Google Maps API 
+- [use-places-autocomplete](https://developers.google.com/maps/documentation/javascript/get-api-key) Simplifies usage of Places API
+- [@reach/combobox](https://reach.tech/combobox/) Creates accessible autocomplete component for React
+- [@react-google-maps/api](https://www.npmjs.com/package/@react-google-maps/api) Used for loading of Google Maps
+- [react-tag-input](https://www.npmjs.com/package/react-tag-input) Utilized for creation of tagging systems
+- [react-dnd-html5-backend](https://www.npmjs.com/package/react-dnd-html5-backend) For easier access to backend
+- [react-datepicker](https://www.npmjs.com/package/react-datepicker) Better styling and accesibility of calenders
+- [react-dnd](https://react-dnd.github.io/react-dnd/about) Helps build complex drag and drop systems
+- [firebase](https://firebase.google.com/) Access to firebase database system
+
+
+Note: There are free tier for all the services listed above.
+
+Next, set up the client, in the terminal:
+
+```
+cd lost-and-found-app-client
+npm start
+```
+
+The following package dependencies may need to be installed:
+
+```
+npm config set legacy-peer-deps true
+npm install axios
+npm install react-router-dom
+npm install formik
+npm install yup
+npm install react-responsive
+npm install react-bootstrap bootstrap
+npm install react-toggle
+npm install "@vis.gl/react-google-maps"
+npm install "use-places-autocomplete"
+npm install "@reach/combobox"
+npm install "@react-google-maps/api"
+npm install "react-tag-input"
+npm install 'react-dnd-html5-backend'
+npm install 'react-dnd'
+npm install react-datepicker
+npm install firebase
+```
+
+For developer dependencies, we recommend installing Nodemon for refreshing client after each save:
+
+```
+npm install nodemon
+```
+---
+
+### Section 1: Introduction
+
+Foraged is a holistic web application designed to facilitate the lost and found process. The primary goal of Foraged is to streamline the typical lost and found process actions into a seamless experience for our users, whether they are item losers or item finders.
+
+This repository contains the server side source code for the Foraged web application. The server handles the following core functionalities: Database related operations, Image tagging using AI image recognition, Encapsulated application functions and our Automated emailing system.
+
+---
+
+### Section 2: Features
+
+#### 2.1 Image tagging using Google Gemini AI Image Recognition and Generative AI
+
+Our server automatically tags images uploaded into the system with keyword tags that are used for various functions, such as; filtering by keywords, matching of lost item notices to posted lost items and many more. This is accomplished by leveraging Google's Gemini API. Through meticulous prompt engineering and micro-training of the Gemini Pro Vision implementation, we have achieved a resultant response from Gemini that we are able to use 99% of the time to populate any image with keyword tags.
+
+#### 2.2 Database Operations using Firebase
+
+Our server also handles all database related operations. All database related operations such as reads and writes are performed securely in the server side.
+
+#### 2.3 Automated Emailing System
+
+Our server also provides an automated emailing system, which is activated whenever the AI generated image tags of a posted item matches the image tags (>50% threshold) of a placed lost item notice in the system. The server generates an email using Mailgen and sends the email to the user who's lost item notice has been matched using Nodemailer.
+
+---
+
+### Section 3: Software Design Principles
+
+#### 3.1 Data Access Object (DAO) Design Pattern
+
+We use the DAO pattern to abstract and encapsulate the details of how our data is saved, retrieved, updated, or deleted in our database, shielding the rest of the applciation from the specific database implementation. By centralizing all database-related code within dedicated DAO files, the rest of our application does not need to scatter database operations throughout the codebase. Instead, the DAO pattern provides a set of generic methods that can be applied for different operations, allowing us to use similat database access patterns across various parts of the application.
+
+#### 3.2 High Cohesion and Loose Coupling
+
+Our software architecture is intentionally structured to operate with distinct frontend and backend applications. This deliberate separation enables a high degree of loose coupling within our system. As a result, we have the flexibility to seamlessly transition between different frontend and backend technology stacks without incurring the significant costs associated with such changes.
+
+#### 3.3 Single Responsibility Principle
+
+Our server side code distinctly seperates its unique operations into seperate files to achieve Single Responsibility. For example, the responsibilities of "Image Tagging" and "Emailing" are sperated into 2 different service files, where each service file handles its sole responsibility. The method(s) in these files are then abstracted by other files during the implementation, allowing us to achieve a highly reusable and maintainable codebase.
+
+---
+
+_Submission: This repository is submitted to Nanyang Technological University Singapore as a project for module SC2006_
+
+<h3 align="center">Reference</h3>
+
+[1]: [_Gemini API Developer Documentation_](https://ai.google.dev/docs?_gl=1*16hsjp5*_up*MQ..&gclid=CjwKCAjwoPOwBhAeEiwAJuXRhwIG-NapKjJ9W1lYBclHR5rBqk2Oh0luWpzv2rekvgiEzJVCvzkCgxoCs1UQAvD_BwE)  
+[2]: [_Firebase API Developer Documentation_](https://firebase.google.com/docs)  
+[3]: [_Nodemailer Developer Documentation_](https://www.nodemailer.com/)  
+[4]: [_Mailgen Developer Documentation_](https://www.npmjs.com/package/mailgen)  
+[5]: [_Live Demo Video_](https://youtu.be/jEnTqqM4Ykk)
