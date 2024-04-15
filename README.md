@@ -141,10 +141,8 @@ Our server side code distinctly seperates its unique operations into seperate fi
 
 _Submission: This repository is submitted to Nanyang Technological University Singapore as a project for module SC2006_
 
-<h3 align="center">Reference</h3>
+<h3 align="center">References</h3>
 
-[1]: [_Gemini API Developer Documentation_](https://ai.google.dev/docs?_gl=1*16hsjp5*_up*MQ..&gclid=CjwKCAjwoPOwBhAeEiwAJuXRhwIG-NapKjJ9W1lYBclHR5rBqk2Oh0luWpzv2rekvgiEzJVCvzkCgxoCs1UQAvD_BwE)  
-[2]: [_Firebase API Developer Documentation_](https://firebase.google.com/docs)  
-[3]: [_Nodemailer Developer Documentation_](https://www.nodemailer.com/)  
-[4]: [_Mailgen Developer Documentation_](https://www.npmjs.com/package/mailgen)  
-[5]: [_Live Demo Video_](https://youtu.be/jEnTqqM4Ykk)
+[1]: [_Google Maps API Developer Documentation_](https://developers.google.com/maps/documentation)  
+[2]: [_Places API Developer Documentation_](https://developers.google.com/maps/documentation/places/web-service/overview)  
+[3]: [_Live Demo Video_](https://youtu.be/jEnTqqM4Ykk)
