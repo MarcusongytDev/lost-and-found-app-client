@@ -28,7 +28,7 @@
 
 ## Environment Set up for Local Deployment
 
-This server side code is developed with [React JS](https://react.dev/) and tested on [Visual Studio Code](https://code.visualstudio.com/).
+This client side code is developed with [React JS](https://react.dev/) and tested on [Visual Studio Code](https://code.visualstudio.com/).
 
 **To run the application:**  
 First, clone the repository into your local device, the directory should look something like this:
