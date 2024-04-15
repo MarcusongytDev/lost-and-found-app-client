@@ -35,7 +35,6 @@ First, clone the repository into your local device, the directory should look so
 
 ```
 ├── LOST-AND-FOUND-APP-CLIENT
-|   ├── node_modules
 |   ├── public
 |   ├── src
 ```
